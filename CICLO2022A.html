@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lISTADO DE ADMISION  </title>
+</head>
+<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>    
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+<script type="text/javascript" >
+
+
+
+
+const db_distrito = [
+
+
+/*
+
+{ registro: "1" , tipoCurso: "2021B" , mensaje: "Mensaje 1",  grupo: "1",fecha : "20-07-2021 ", horario:"9:00 - 13:00 pm", aula: "17"},
+{ registro: "2" , tipoCurso: "2021B" , mensaje: "Mensaje 1",  grupo: "2",fecha : "20-07-2021 ", horario:"9:00 - 13:00 pm", aula: "18"},
+
+{ registro: "512345678" , tipoCurso: "2021B" , mensaje: "Mensaje 1",grupo: "2", fecha : "20-07-2021 ", horario:"9:00 - 13:00 pm", aula: "17"},
+{ registro: "512345679" , tipoCurso: "2021B" , mensaje: "Mensaje 1",grupo: "2", fecha : "20-07-2021 ", horario:"9:00 - 13:00 pm", aula: "17"},
+{ registro: "512345690" , tipoCurso: "BASE" , mensaje: "Mensaje 1",grupo: "2" ,fecha : "20-07-2021 ", horario:"9:00 - 13:00 pm", aula: "17"},
+{ registro: "3" , tipoCurso: "BASE" , mensaje: "Mensaje 2", grupo: "2" ,fecha : "20-07-2021 ", horario:"9:00 - 13:00 pm", aula: "17"}
+
+{ registro: "5244630" , tipoCurso:"2021B",codigo:"221929069",nombre:"FATIMA YULISSA MORTERA DE LA ROSA",grupo:"11",horario:"08:00a.m. a 10:45a.m."},
+
+{ registro:"", codigo: "", Nombre:"", grupo:"", laboratorio:"",horario:"" }
+//Numero de Registro	Codigo de alumno 	Nombre	Grupo 	Laboratorio	Horario 
+*/
+//{ registro: "" , tipoCurso:"",codigo:"",nombre:"",grupo:"", laboratorio:"",fecha:"",horario:"."},
+///bd
+//
+{ registro:"5480837", tipoCurso:"2022A", codigo: "222279416", nombre :"ACEVES NORIEGA ANGELA VALERIA", grupo:"Grupo 1", laboratorio:"1",fecha:"12 de Enero de 2022", horario:"8:00 AM a 11:00 AM"},
+{ registro:"5476809", tipoCurso:"2022A", codigo: "222279181", nombre :"ACOSTA TERAN HANNA HAILEN", grupo:"Grupo 1", laboratorio:"1",fecha:"12 de Enero de 2022", horario:"8:00 AM a 11:00 AM"},
+{ registro:"5512616", tipoCurso:"2022A", codigo: "222278916", nombre :"ADAME BARENAS ABDI", grupo:"Grupo 1", laboratorio:"1",fecha:"12 de Enero de 2022", horario:"8:00 AM a 11:00 AM"},
+{ registro:"5463938", tipoCurso:"2022A", codigo: "222231278", nombre :"AGUILAR RUIZ KARLA XIMENA", grupo:"Grupo 1", laboratorio:"1",fecha:"12 de Enero de 2022", horario:"8:00 AM a 11:00 AM"},
+{ registro:"5463907", tipoCurso:"2022A", codigo: "222230794", nombre :"AGUILAR SANDOVAL MARIA RENATA", grupo:"Grupo 1", laboratorio:"1",fecha:"12 de Enero de 2022", horario:"8:00 AM a 11:00 AM"},
+{ registro:"5466259", tipoCurso:"2022A", codigo: "222231707", nombre :"ALDACO PRADO CHRISTHOPER MOISES", grupo:"Grupo 1", laboratorio:"1",fecha:"12 de Enero de 2022", horario:"8:00 AM a 11:00 AM"},
+{ registro:"5463925", tipoCurso:"2022A", codigo: "222230174", nombre :"ALEJO CARRILLO JUAN PABLO", grupo:"Grupo 1", laboratorio:"1",fecha:"12 de Enero de 2022", horario:"8:00 AM a 11:00 AM"},
+{ registro:"5463922", tipoCurso:"2022A", codigo: "222230247", nombre :"ALONSO JIMENEZ JENNIFER ITARI", grupo:"Grupo 1", laboratorio:"1",fecha:"12 de Enero de 2022", horario:"8:00 AM a 11:00 AM"},
+{ registro:"5501199", tipoCurso:"2022A", codigo: "222278991", nombre :"ALONSO LOPEZ JOSE MANUEL", grupo:"Grupo 1", laboratorio:"1",fecha:"12 de Enero de 2022", horario:"8:00 AM a 11:00 AM"},
+{ registro:"5479239", tipoCurso:"2022A", codigo: "222279548", nombre :"ALVA MUÑOZ ULISES URIEL", grupo:"Grupo 1", laboratorio:"1",fecha:"12 de Enero de 2022", horario:"8:00 AM a 11:00 AM"},
+{ registro:"5535042", tipoCurso:"2022A", codigo: "222279882", nombre :"ALVARADO GUTIERREZ ALEXANDER", grupo:"Grupo 1", laboratorio:"1",fecha:"12 de Enero de 2022", horario:"8:00 AM a 11:00 AM"},
+{ registro:"5519022", tipoCurso:"2022A", codigo: "222279815", nombre :"ALVARADO GUTIERREZ ALEXIS", grupo:"Grupo 1", laboratorio:"1",fecha:"12 de Enero de 2022", horario:"8:00 AM a 11:00 AM"},
+{ registro:"", tipoCurso:"2022A", codigo: "222232088", nombre :"ALVARADO LOPEZ DANIELA", grupo:"Grupo 1", laboratorio:"1",fecha:"12 de Enero de 2022", horario:"8:00 AM a 11:00 AM"},
+{ registro:"", tipoCurso:"2022A", codigo: "222232126", nombre :"ALVARADO LOPEZ GABRIELA", grupo:"Grupo 1", laboratorio:"1",fecha:"12 de Enero de 2022", horario:"8:00 AM a 11:00 AM"},
+{ registro:"5509849", tipoCurso:"2022A", codigo: "222280066", nombre :"ALVAREZ BARAJAS VALERIA JOCELYN", grupo:"Grupo 1", laboratorio:"1",fecha:"12 de Enero de 2022", horario:"8:00 AM a 11:00 AM"},
+{ registro:"5463981", tipoCurso:"2022A", codigo: "222230727", nombre :"ALVAREZ RAMOS CARLOS JAVIER", grupo:"Grupo 1", laboratorio:"1",fecha:"12 de Enero de 2022", horario:"8:00 AM a 11:00 AM"},
+{ registro:"5528577", tipoCurso:"2022A", codigo: "222280139", nombre :"ALVAREZ SOSA MARCO ISAAC", grupo:"Grupo 1", laboratorio:"1",fecha:"12 de Enero de 2022", horario:"8:00 AM a 11:00 AM"},
+{ registro:"5463991", tipoCurso:"2022A", codigo: "222230417", nombre :"ANDALON JORDAN IAN JAEL", grupo:"Grupo 1", laboratorio:"1",fecha:"12 de Enero de 2022", horario:"8:00 AM a 11:00 AM"},
+{ registro:"5510708", tipoCurso:"2022A", codigo: "222279602", nombre :"ANICASIO SALINAS MISAEL DE JESUS", grupo:"Grupo 1", laboratorio:"1",fecha:"12 de Enero de 2022", horario:"8:00 AM a 11:00 AM"},
+{ registro:"5467452", tipoCurso:"2022A", codigo: "222231553", nombre :"ARANDA CASTAÑEDA LUIS DE JESUS", grupo:"Grupo 1", laboratorio:"1",fecha:"12 de Enero de 2022", horario:"8:00 AM a 11:00 AM"},
+{ registro:"", tipoCurso:"2022A", codigo: "222232193", nombre :"ARCE MATEOS MIGUEL ANGEL", grupo:"Grupo 1", laboratorio:"1",fecha:"12 de Enero de 2022", horario:"8:00 AM a 11:00 AM"},
+{ registro:"5535045", tipoCurso:"2022A", codigo: "222280333", nombre :"ARECHIGA MOJARRAS CARLO PAOLO", grupo:"Grupo 1", laboratorio:"1",fecha:"12 de Enero de 2022", horario:"8:00 AM a 11:00 AM"},
+{ registro:"5517759", tipoCurso:"2022A", codigo: "222279459", nombre :"ARELLANO GARNICA DIEGO EMMANUEL", grupo:"Grupo 1", laboratorio:"1",fecha:"12 de Enero de 2022", horario:"8:00 AM a 11:00 AM"},
+{ registro:"", tipoCurso:"2022A", codigo: "222232258", nombre :"ARZATE MUÑOZ JORGE ALEJANDRO", grupo:"Grupo 1", laboratorio:"1",fecha:"12 de Enero de 2022", horario:"8:00 AM a 11:00 AM"},
+{ registro:"5463916", tipoCurso:"2022A", codigo: "222230212", nombre :"AVIÑA DE LA O ALEXIS ZAIR", grupo:"Grupo 1", laboratorio:"1",fecha:"12 de Enero de 2022", horario:"8:00 AM a 11:00 AM"},
+{ registro:"5521872", tipoCurso:"2022A", codigo: "222279041", nombre :"AVIÑA MORA ALEJANDRA JAQUELINE", grupo:"Grupo 2", laboratorio:"2",fecha:"12 de Enero de 2022", horario:"8:00 AM a 11:00 AM"},
+{ registro:"5514872", tipoCurso:"2022A", codigo: "222279718", nombre :"AYALA HUERTA EDWIN URIEL", grupo:"Grupo 2", laboratorio:"2",fecha:"12 de Enero de 2022", horario:"8:00 AM a 11:00 AM"},
+{ registro:"5497713", tipoCurso:"2022A", codigo: "222280384", nombre :"BARAJAS HERRERA DACIA NAOMI", grupo:"Grupo 2", laboratorio:"2",fecha:"12 de Enero de 2022", horario:"8:00 AM a 11:00 AM"},
+{ registro:"5463909", tipoCurso:"2022A", codigo: "222230891", nombre :"BARBA MAGAÑA ITZEL GETSEMANI", grupo:"Grupo 2", laboratorio:"2",fecha:"12 de Enero de 2022", horario:"8:00 AM a 11:00 AM"},
+{ registro:"5480270", tipoCurso:"2022A", codigo: "222280104", nombre :"BARBA MEDINA DILAN MOISES", grupo:"Grupo 2", laboratorio:"2",fecha:"12 de Enero de 2022", horario:"8:00 AM a 11:00 AM"},
+{ registro:"5506893", tipoCurso:"2022A", codigo: "222280155", nombre :"BARRERA GONZALEZ DANIELA JOCELINE", grupo:"Grupo 2", laboratorio:"2",fecha:"12 de Enero de 2022", horario:"8:00 AM a 11:00 AM"},
+{ registro:"5463984", tipoCurso:"2022A", codigo: "222230557", nombre :"BARRON CIGALA ALONDRA JAQUELINE", grupo:"Grupo 2", laboratorio:"2",fecha:"12 de Enero de 2022", horario:"8:00 AM a 11:00 AM"},
+{ registro:"5463969", tipoCurso:"2022A", codigo: "222231154", nombre :"BARRON MACIAS DANTE SANTIAGO", grupo:"Grupo 2", laboratorio:"2",fecha:"12 de Enero de 2022", horario:"8:00 AM a 11:00 AM"},
+{ registro:"5463987", tipoCurso:"2022A", codigo: "222231022", nombre :"BAUTISTA ECHEVARRIA JOSE ANGEL", grupo:"Grupo 2", laboratorio:"2",fecha:"12 de Enero de 2022", horario:"8:00 AM a 11:00 AM"},
+{ registro:"5463923", tipoCurso:"2022A", codigo: "222231073", nombre :"BAUTISTA SANCHEZ ETNA JAZMIN", grupo:"Grupo 2", laboratorio:"2",fecha:"12 de Enero de 2022", horario:"8:00 AM a 11:00 AM"},
+{ registro:"5534352", tipoCurso:"2022A", codigo: "222280228", nombre :"BECERRA GONZALEZ ALAN OMAR", grupo:"Grupo 2", laboratorio:"2",fecha:"12 de Enero de 2022", horario:"8:00 AM a 11:00 AM"},
+{ registro:"5463963", tipoCurso:"2022A", codigo: "222230611", nombre :"BENAVIDES MARTINEZ ANGEL ANTONIO", grupo:"Grupo 2", laboratorio:"2",fecha:"12 de Enero de 2022", horario:"8:00 AM a 11:00 AM"},
+{ registro:"5463918", tipoCurso:"2022A", codigo: "222230565", nombre :"BERNAL GUEVARA JOSHUA DOMINIK ALAIN", grupo:"Grupo 2", laboratorio:"2",fecha:"12 de Enero de 2022", horario:"8:00 AM a 11:00 AM"},
+{ registro:"5466163", tipoCurso:"2022A", codigo: "222231677", nombre :"BETANCOURT SOLORZANO YAEL EDUARDO", grupo:"Grupo 2", laboratorio:"2",fecha:"12 de Enero de 2022", horario:"8:00 AM a 11:00 AM"},
+{ registro:"5535040", tipoCurso:"2022A", codigo: "222279254", nombre :"BOTELLO RAMIREZ DANIELA FERNANDA", grupo:"Grupo 2", laboratorio:"2",fecha:"12 de Enero de 2022", horario:"8:00 AM a 11:00 AM"},
+{ registro:"5505129", tipoCurso:"2022A", codigo: "222280201", nombre :"BRITO RODRIGUEZ JACQUELINE", grupo:"Grupo 2", laboratorio:"2",fecha:"12 de Enero de 2022", horario:"8:00 AM a 11:00 AM"},
+{ registro:"5500328", tipoCurso:"2022A", codigo: "222280015", nombre :"BUCIO GONZALEZ ANGEL GABRIEL", grupo:"Grupo 2", laboratorio:"2",fecha:"12 de Enero de 2022", horario:"8:00 AM a 11:00 AM"},
+{ registro:"", tipoCurso:"2022A", codigo: "222231383", nombre :"BUSTINDUY ALEJO TAYRA GUADALUPE", grupo:"Grupo 2", laboratorio:"2",fecha:"12 de Enero de 2022", horario:"8:00 AM a 11:00 AM"},
+{ registro:"5463947", tipoCurso:"2022A", codigo: "222230654", nombre :"CABRERA GAYTAN KELY SAMARA", grupo:"Grupo 2", laboratorio:"2",fecha:"12 de Enero de 2022", horario:"8:00 AM a 11:00 AM"},
+{ registro:"5463927", tipoCurso:"2022A", codigo: "222231308", nombre :"CAMARENA NAVARRO EMMANUEL", grupo:"Grupo 2", laboratorio:"2",fecha:"12 de Enero de 2022", horario:"8:00 AM a 11:00 AM"},
+{ registro:"5464001", tipoCurso:"2022A", codigo: "222231162", nombre :"CAMPOS PEDRO JOSE ABRAHAM", grupo:"Grupo 2", laboratorio:"2",fecha:"12 de Enero de 2022", horario:"8:00 AM a 11:00 AM"},
+{ registro:"5481004", tipoCurso:"2022A", codigo: "222279033", nombre :"CAMPOS RUVALCABA YARELY ENID", grupo:"Grupo 2", laboratorio:"2",fecha:"12 de Enero de 2022", horario:"8:00 AM a 11:00 AM"},
+{ registro:"5535551", tipoCurso:"2022A", codigo: "222280341", nombre :"CANDELARIO CORTINA ESTEBAN FABIAN", grupo:"Grupo 2", laboratorio:"2",fecha:"12 de Enero de 2022", horario:"8:00 AM a 11:00 AM"},
+{ registro:"5463933", tipoCurso:"2022A", codigo: "222230433", nombre :"CARBAJAL HERRERA OMAR OSWALDO", grupo:"Grupo 2", laboratorio:"2",fecha:"12 de Enero de 2022", horario:"8:00 AM a 11:00 AM"},
+{ registro:"5535051", tipoCurso:"2022A", codigo: "222279319", nombre :"CARBAJAL VILLA ANGEL GABRIEL", grupo:"Grupo 2", laboratorio:"2",fecha:"12 de Enero de 2022", horario:"8:00 AM a 11:00 AM"},
+{ registro:"5467114", tipoCurso:"2022A", codigo: "222231995", nombre :"CARDENAS MARQUEZ NATANAEL GUADALUPE", grupo:"Grupo 3", laboratorio:"3",fecha:"12 de Enero de 2022", horario:"8:00 AM a 11:00 AM"},
+{ registro:"", tipoCurso:"2022A", codigo: "222231731", nombre :"CARDONA RODRIGUEZ MELANY SARAI", grupo:"Grupo 3", laboratorio:"3",fecha:"12 de Enero de 2022", horario:"8:00 AM a 11:00 AM"},
+{ registro:"5526755", tipoCurso:"2022A", codigo: "222278924", nombre :"CARVAJAL CARLOS BRANDON RAMON", grupo:"Grupo 3", laboratorio:"3",fecha:"12 de Enero de 2022", horario:"8:00 AM a 11:00 AM"},
+{ registro:"5463932", tipoCurso:"2022A", codigo: "222231111", nombre :"CASADOS BARRERA RAFAEL DALI", grupo:"Grupo 3", laboratorio:"3",fecha:"12 de Enero de 2022", horario:"8:00 AM a 11:00 AM"},
+{ registro:"5500139", tipoCurso:"2022A", codigo: "222280465", nombre :"CASILLAS MARQUEZ YOSELIN", grupo:"Grupo 3", laboratorio:"3",fecha:"12 de Enero de 2022", horario:"8:00 AM a 11:00 AM"},
+{ registro:"5463911", tipoCurso:"2022A", codigo: "222230352", nombre :"CASTAÑEDA ALDAMA MARIA FERNANDA", grupo:"Grupo 3", laboratorio:"3",fecha:"12 de Enero de 2022", horario:"8:00 AM a 11:00 AM"},
+{ registro:"5466369", tipoCurso:"2022A", codigo: "222231987", nombre :"CASTAÑEDA MACIEL BLANCA ANETTE", grupo:"Grupo 3", laboratorio:"3",fecha:"12 de Enero de 2022", horario:"8:00 AM a 11:00 AM"},
+{ registro:"5510886", tipoCurso:"2022A", codigo: "222279696", nombre :"CASTILLO RUIZ IRAIS YAMILE", grupo:"Grupo 3", laboratorio:"3",fecha:"12 de Enero de 2022", horario:"8:00 AM a 11:00 AM"},
+{ registro:"5463973", tipoCurso:"2022A", codigo: "222230255", nombre :"CASTRO ALDACO RAUL ALEJANDRO", grupo:"Grupo 3", laboratorio:"3",fecha:"12 de Enero de 2022", horario:"8:00 AM a 11:00 AM"},
+{ registro:"5463955", tipoCurso:"2022A", codigo: "222231103", nombre :"CASTRO IÑIGUEZ NESTOR ALBERTO", grupo:"Grupo 3", laboratorio:"3",fecha:"12 de Enero de 2022", horario:"8:00 AM a 11:00 AM"},
+{ registro:"5463914", tipoCurso:"2022A", codigo: "222230581", nombre :"CEJA ORTEGA ANGEL ISRAEL", grupo:"Grupo 3", laboratorio:"3",fecha:"12 de Enero de 2022", horario:"8:00 AM a 11:00 AM"},
+{ registro:"5475801", tipoCurso:"2022A", codigo: "222279335", nombre :"CHAVIRA ZAMORA EVELYN", grupo:"Grupo 3", laboratorio:"3",fecha:"12 de Enero de 2022", horario:"8:00 AM a 11:00 AM"},
+{ registro:"5475719", tipoCurso:"2022A", codigo: "222279572", nombre :"CHOLICO BORJAS FANNY IXZEL", grupo:"Grupo 3", laboratorio:"3",fecha:"12 de Enero de 2022", horario:"8:00 AM a 11:00 AM"},
+{ registro:"5496091", tipoCurso:"2022A", codigo: "222278851", nombre :"CORONADO GUTIERREZ AARON SAID", grupo:"Grupo 3", laboratorio:"3",fecha:"12 de Enero de 2022", horario:"8:00 AM a 11:00 AM"},
+{ registro:"5463975", tipoCurso:"2022A", codigo: "222230492", nombre :"CORTES BARAJAS ALONDRA VICTORIA", grupo:"Grupo 3", laboratorio:"3",fecha:"12 de Enero de 2022", horario:"8:00 AM a 11:00 AM"},
+{ registro:"5471292", tipoCurso:"2022A", codigo: "222279394", nombre :"CORTES CONTRERAS AURORA FRENESIK", grupo:"Grupo 3", laboratorio:"3",fecha:"12 de Enero de 2022", horario:"8:00 AM a 11:00 AM"},
+{ registro:"5463945", tipoCurso:"2022A", codigo: "222231138", nombre :"CRAVIOTTO TORRES LEONARDO FAVIO", grupo:"Grupo 3", laboratorio:"3",fecha:"12 de Enero de 2022", horario:"8:00 AM a 11:00 AM"},
+{ registro:"5487923", tipoCurso:"2022A", codigo: "222232029", nombre :"CRUZ GAMIÑO AMERICA VALERIA", grupo:"Grupo 3", laboratorio:"3",fecha:"12 de Enero de 2022", horario:"8:00 AM a 11:00 AM"},
+{ registro:"5535053", tipoCurso:"2022A", codigo: "222279432", nombre :"CRUZ GARCIA CHRISTOPHER ALEJANDRO", grupo:"Grupo 3", laboratorio:"3",fecha:"12 de Enero de 2022", horario:"8:00 AM a 11:00 AM"},
+{ registro:"5526815", tipoCurso:"2022A", codigo: "222278878", nombre :"CUADROS RAMIREZ ALEXANDRA GUADALUPE", grupo:"Grupo 3", laboratorio:"3",fecha:"12 de Enero de 2022", horario:"8:00 AM a 11:00 AM"},
+{ registro:"5491935", tipoCurso:"2022A", codigo: "222280163", nombre :"CUADROS RAMIREZ JOSE EMILIANO", grupo:"Grupo 3", laboratorio:"3",fecha:"12 de Enero de 2022", horario:"8:00 AM a 11:00 AM"},
+{ registro:"5497227", tipoCurso:"2022A", codigo: "222279823", nombre :"CUEVAS MONSIVAIS JORGE", grupo:"Grupo 3", laboratorio:"3",fecha:"12 de Enero de 2022", horario:"8:00 AM a 11:00 AM"},
+{ registro:"5535052", tipoCurso:"2022A", codigo: "222231685", nombre :"DAMIAN VALENZUELA ULISES ALEJANDRO", grupo:"Grupo 3", laboratorio:"3",fecha:"12 de Enero de 2022", horario:"8:00 AM a 11:00 AM"},
+{ registro:"5505175", tipoCurso:"2022A", codigo: "222279351", nombre :"DE LA CRUZ GARCIA LUIS ALFONSO", grupo:"Grupo 3", laboratorio:"3",fecha:"12 de Enero de 2022", horario:"8:00 AM a 11:00 AM"},
+{ registro:"5463954", tipoCurso:"2022A", codigo: "222230425", nombre :"DE LA TORRE PEREZ ESTRELLA DENISSE", grupo:"Grupo 3", laboratorio:"3",fecha:"12 de Enero de 2022", horario:"8:00 AM a 11:00 AM"},
+{ registro:"5463985", tipoCurso:"2022A", codigo: "222230441", nombre :"DIAZ GARCIA AKARI YAMILE", grupo:"Grupo 4", laboratorio:"1",fecha:"12 de Enero de 2022", horario:"10:00 AM a 1:00 PM"},
+{ registro:"5467029", tipoCurso:"2022A", codigo: "222231391", nombre :"DIAZ REYES ROSMERI", grupo:"Grupo 4", laboratorio:"1",fecha:"12 de Enero de 2022", horario:"10:00 AM a 1:00 PM"},
+{ registro:"5474477", tipoCurso:"2022A", codigo: "222280074", nombre :"DIAZ SANDOVAL KAREN ARACELI", grupo:"Grupo 4", laboratorio:"1",fecha:"12 de Enero de 2022", horario:"10:00 AM a 1:00 PM"},
+{ registro:"", tipoCurso:"2022A", codigo: "222231537", nombre :"DURAN HERNANDEZ KEVIN BRYAN", grupo:"Grupo 4", laboratorio:"1",fecha:"12 de Enero de 2022", horario:"10:00 AM a 1:00 PM"},
+{ registro:"5535038", tipoCurso:"2022A", codigo: "222280058", nombre :"DURAN LOERA BELEN GUADALUPE", grupo:"Grupo 4", laboratorio:"1",fecha:"12 de Enero de 2022", horario:"10:00 AM a 1:00 PM"},
+{ registro:"5487061", tipoCurso:"2022A", codigo: "222279637", nombre :"ESPINOZA NOGAL IMELDA PAOLA", grupo:"Grupo 4", laboratorio:"1",fecha:"12 de Enero de 2022", horario:"10:00 AM a 1:00 PM"},
+{ registro:"5463988", tipoCurso:"2022A", codigo: "222230204", nombre :"ESTRADA GARCIA GUILLERMO DANIEL", grupo:"Grupo 4", laboratorio:"1",fecha:"12 de Enero de 2022", horario:"10:00 AM a 1:00 PM"},
+{ registro:"5508112", tipoCurso:"2022A", codigo: "222279653", nombre :"ESTRADA MARTINEZ JUAN PABLO", grupo:"Grupo 4", laboratorio:"1",fecha:"12 de Enero de 2022", horario:"10:00 AM a 1:00 PM"},
+{ registro:"5499554", tipoCurso:"2022A", codigo: "222279203", nombre :"FIERROS RAMIREZ DAFNE MARIANA", grupo:"Grupo 4", laboratorio:"1",fecha:"12 de Enero de 2022", horario:"10:00 AM a 1:00 PM"},
+{ registro:"5463971", tipoCurso:"2022A", codigo: "222231014", nombre :"FLORES PEDROZA GEORGINA ALEXANDRA", grupo:"Grupo 4", laboratorio:"1",fecha:"12 de Enero de 2022", horario:"10:00 AM a 1:00 PM"},
+{ registro:"5510853", tipoCurso:"2022A", codigo: "222279661", nombre :"FRANCO DELGADO ALEXA DAYANNE", grupo:"Grupo 4", laboratorio:"1",fecha:"12 de Enero de 2022", horario:"10:00 AM a 1:00 PM"},
+{ registro:"5494430", tipoCurso:"2022A", codigo: "222279114", nombre :"FRANCO GARCIA ANDRES", grupo:"Grupo 4", laboratorio:"1",fecha:"12 de Enero de 2022", horario:"10:00 AM a 1:00 PM"},
+{ registro:"5519671", tipoCurso:"2022A", codigo: "222279521", nombre :"FREGOSO AGUILAR KEVIN ALEXIS", grupo:"Grupo 4", laboratorio:"1",fecha:"12 de Enero de 2022", horario:"10:00 AM a 1:00 PM"},
+{ registro:"", tipoCurso:"2022A", codigo: "222231413", nombre :"FREGOSO NUÑO ALISSON RENATA", grupo:"Grupo 4", laboratorio:"1",fecha:"12 de Enero de 2022", horario:"10:00 AM a 1:00 PM"},
+{ registro:"", tipoCurso:"2022A", codigo: "222231561", nombre :"GALINDO GONZALEZ AXEL JAVIER", grupo:"Grupo 4", laboratorio:"1",fecha:"12 de Enero de 2022", horario:"10:00 AM a 1:00 PM"},
+{ registro:"5535035", tipoCurso:"2022A", codigo: "222279211", nombre :"GALLARDO LEPE ANGEL DAVID", grupo:"Grupo 4", laboratorio:"1",fecha:"12 de Enero de 2022", horario:"10:00 AM a 1:00 PM"},
+{ registro:"5467362", tipoCurso:"2022A", codigo: "222231928", nombre :"GALVAN LOZA MARIANA", grupo:"Grupo 4", laboratorio:"1",fecha:"12 de Enero de 2022", horario:"10:00 AM a 1:00 PM"},
+{ registro:"5467641", tipoCurso:"2022A", codigo: "222231502", nombre :"GALVAN MORALES MARITZA ELIZABETH", grupo:"Grupo 4", laboratorio:"1",fecha:"12 de Enero de 2022", horario:"10:00 AM a 1:00 PM"},
+{ registro:"5467115", tipoCurso:"2022A", codigo: "222231898", nombre :"GAMA CASTRO PAULINA BERENICE", grupo:"Grupo 4", laboratorio:"1",fecha:"12 de Enero de 2022", horario:"10:00 AM a 1:00 PM"},
+{ registro:"5519643", tipoCurso:"2022A", codigo: "222279955", nombre :"GARCIA LEMUS JUAN CARLOS", grupo:"Grupo 4", laboratorio:"1",fecha:"12 de Enero de 2022", horario:"10:00 AM a 1:00 PM"},
+{ registro:"5463957", tipoCurso:"2022A", codigo: "222230506", nombre :"GARCIA MEDELLIN ERICK CHERANDOA", grupo:"Grupo 4", laboratorio:"1",fecha:"12 de Enero de 2022", horario:"10:00 AM a 1:00 PM"},
+{ registro:"5474729", tipoCurso:"2022A", codigo: "222280295", nombre :"GARCIA PLASCENCIA ELZABAD", grupo:"Grupo 4", laboratorio:"1",fecha:"12 de Enero de 2022", horario:"10:00 AM a 1:00 PM"},
+{ registro:"5498695", tipoCurso:"2022A", codigo: "222280252", nombre :"GOCHE PEREZ KEVIN KLEBER", grupo:"Grupo 4", laboratorio:"1",fecha:"12 de Enero de 2022", horario:"10:00 AM a 1:00 PM"},
+{ registro:"5466222", tipoCurso:"2022A", codigo: "222231723", nombre :"GOCHE RODRIGUEZ IGNACIO", grupo:"Grupo 4", laboratorio:"1",fecha:"12 de Enero de 2022", horario:"10:00 AM a 1:00 PM"},
+{ registro:"5521747", tipoCurso:"2022A", codigo: "222279904", nombre :"GOMEZ AVALOS DONAMI DAVID", grupo:"Grupo 4", laboratorio:"1",fecha:"12 de Enero de 2022", horario:"10:00 AM a 1:00 PM"},
+{ registro:"5535037", tipoCurso:"2022A", codigo: "222279777", nombre :"GOMEZ CONTRERAS CRISTIAN ADONAI", grupo:"Grupo 5", laboratorio:"2",fecha:"12 de Enero de 2022", horario:"10:00 AM a 1:00 PM"},
+{ registro:"5463959", tipoCurso:"2022A", codigo: "222230948", nombre :"GOMEZ GOMEZ LUIS ALBERTO", grupo:"Grupo 5", laboratorio:"2",fecha:"12 de Enero de 2022", horario:"10:00 AM a 1:00 PM"},
+{ registro:"5383005", tipoCurso:"2022A", codigo: "222231812", nombre :"GONZALEZ AMARAL ARANZA IVETTE", grupo:"Grupo 5", laboratorio:"2",fecha:"12 de Enero de 2022", horario:"10:00 AM a 1:00 PM"},
+{ registro:"5463966", tipoCurso:"2022A", codigo: "222230646", nombre :"GONZALEZ CABRERA JUAN PABLO", grupo:"Grupo 5", laboratorio:"2",fecha:"12 de Enero de 2022", horario:"10:00 AM a 1:00 PM"},
+{ registro:"5498251", tipoCurso:"2022A", codigo: "222280414", nombre :"GONZALEZ CAMPOS ALONDRA DALANY", grupo:"Grupo 5", laboratorio:"2",fecha:"12 de Enero de 2022", horario:"10:00 AM a 1:00 PM"},
+{ registro:"5463980", tipoCurso:"2022A", codigo: "222230735", nombre :"GONZALEZ CORDERO MOISES ALTAIR", grupo:"Grupo 5", laboratorio:"2",fecha:"12 de Enero de 2022", horario:"10:00 AM a 1:00 PM"},
+{ registro:"", tipoCurso:"2022A", codigo: "222232231", nombre :"GONZALEZ GONZALEZ CARLOS IVAN", grupo:"Grupo 5", laboratorio:"2",fecha:"12 de Enero de 2022", horario:"10:00 AM a 1:00 PM"},
+{ registro:"5496615", tipoCurso:"2022A", codigo: "222280309", nombre :"GONZALEZ LARA ANGEL ANDRES", grupo:"Grupo 5", laboratorio:"2",fecha:"12 de Enero de 2022", horario:"10:00 AM a 1:00 PM"},
+{ registro:"", tipoCurso:"2022A", codigo: "222231766", nombre :"GONZALEZ LOPEZ ANDREA GUADALUPE", grupo:"Grupo 5", laboratorio:"2",fecha:"12 de Enero de 2022", horario:"10:00 AM a 1:00 PM"},
+{ registro:"5507889", tipoCurso:"2022A", codigo: "222280023", nombre :"GONZALEZ LOPEZ KAROL ARIAM", grupo:"Grupo 5", laboratorio:"2",fecha:"12 de Enero de 2022", horario:"10:00 AM a 1:00 PM"},
+{ registro:"5528826", tipoCurso:"2022A", codigo: "222279386", nombre :"GONZALEZ MACIAS GIOVANNA PAOLA", grupo:"Grupo 5", laboratorio:"2",fecha:"12 de Enero de 2022", horario:"10:00 AM a 1:00 PM"},
+{ registro:"5463950", tipoCurso:"2022A", codigo: "222230875", nombre :"GONZALEZ MARTINEZ ERNESTO OCELOTL", grupo:"Grupo 5", laboratorio:"2",fecha:"12 de Enero de 2022", horario:"10:00 AM a 1:00 PM"},
+{ registro:"5463953", tipoCurso:"2022A", codigo: "222230867", nombre :"GONZALEZ PADILLA JUAN AQUILES", grupo:"Grupo 5", laboratorio:"2",fecha:"12 de Enero de 2022", horario:"10:00 AM a 1:00 PM"},
+{ registro:"5526797", tipoCurso:"2022A", codigo: "222279939", nombre :"GONZALEZ PEREZ CRISTIAN LEONEL", grupo:"Grupo 5", laboratorio:"2",fecha:"12 de Enero de 2022", horario:"10:00 AM a 1:00 PM"},
+{ registro:"5463937", tipoCurso:"2022A", codigo: "222230778", nombre :"GONZALEZ RENDON SAID YAEL", grupo:"Grupo 5", laboratorio:"2",fecha:"12 de Enero de 2022", horario:"10:00 AM a 1:00 PM"},
+{ registro:"5463976", tipoCurso:"2022A", codigo: "222231057", nombre :"GONZALEZ RODRIGUEZ ARIANA LIVIER", grupo:"Grupo 5", laboratorio:"2",fecha:"12 de Enero de 2022", horario:"10:00 AM a 1:00 PM"},
+{ registro:"5515162", tipoCurso:"2022A", codigo: "222279262", nombre :"GONZALEZ TAMAYO PAOLA MARGARITA", grupo:"Grupo 5", laboratorio:"2",fecha:"12 de Enero de 2022", horario:"10:00 AM a 1:00 PM"},
+{ registro:"", tipoCurso:"2022A", codigo: "222231421", nombre :"GUAREÑO FERNANDEZ TADEO EMMANUEL", grupo:"Grupo 5", laboratorio:"2",fecha:"12 de Enero de 2022", horario:"10:00 AM a 1:00 PM"},
+{ registro:"5473263", tipoCurso:"2022A", codigo: "222280368", nombre :"GUERRA GARCIA GUILLERMO", grupo:"Grupo 5", laboratorio:"2",fecha:"12 de Enero de 2022", horario:"10:00 AM a 1:00 PM"},
+{ registro:"5505269", tipoCurso:"2022A", codigo: "222278908", nombre :"GUTIERREZ HERNANDEZ CINTHYA NAOMI", grupo:"Grupo 5", laboratorio:"2",fecha:"12 de Enero de 2022", horario:"10:00 AM a 1:00 PM"},
+{ registro:"5519465", tipoCurso:"2022A", codigo: "222279378", nombre :"GUTIERREZ LUNA ERNESTO DANIEL", grupo:"Grupo 5", laboratorio:"2",fecha:"12 de Enero de 2022", horario:"10:00 AM a 1:00 PM"},
+{ registro:"5463912", tipoCurso:"2022A", codigo: "222230395", nombre :"GUTIERREZ MUÑOZ ALAN EMMANUELLE", grupo:"Grupo 5", laboratorio:"2",fecha:"12 de Enero de 2022", horario:"10:00 AM a 1:00 PM"},
+{ registro:"5527354", tipoCurso:"2022A", codigo: "222279289", nombre :"GUTIERREZ PAJARITO JOSHUA DIDIER", grupo:"Grupo 5", laboratorio:"2",fecha:"12 de Enero de 2022", horario:"10:00 AM a 1:00 PM"},
+{ registro:"5522108", tipoCurso:"2022A", codigo: "222279424", nombre :"GUZMAN MOYA ALONDRA ESTEFANIA", grupo:"Grupo 5", laboratorio:"2",fecha:"12 de Enero de 2022", horario:"10:00 AM a 1:00 PM"},
+{ registro:"5463998", tipoCurso:"2022A", codigo: "222230697", nombre :"HERNADEZ PLASCENCIA JOSEPH ALEXIS", grupo:"Grupo 5", laboratorio:"2",fecha:"12 de Enero de 2022", horario:"10:00 AM a 1:00 PM"},
+{ registro:"5463965", tipoCurso:"2022A", codigo: "222230859", nombre :"HERNANDEZ ANDRADE JUAN PEDRO", grupo:"Grupo 6", laboratorio:"3",fecha:"12 de Enero de 2022", horario:"10:00 AM a 1:00 PM"},
+{ registro:"5496664", tipoCurso:"2022A", codigo: "222279009", nombre :"HERNANDEZ ARAIZA LEONARDO SEBASTIAN", grupo:"Grupo 6", laboratorio:"3",fecha:"12 de Enero de 2022", horario:"10:00 AM a 1:00 PM"},
+{ registro:"", tipoCurso:"2022A", codigo: "222231774", nombre :"HERNANDEZ BENAVIDES BRITANY YOSSELIN", grupo:"Grupo 6", laboratorio:"3",fecha:"12 de Enero de 2022", horario:"10:00 AM a 1:00 PM"},
+{ registro:"", tipoCurso:"2022A", codigo: "222232118", nombre :"HERNANDEZ BENAVIDES SHECCID ALEJANDRA", grupo:"Grupo 6", laboratorio:"3",fecha:"12 de Enero de 2022", horario:"10:00 AM a 1:00 PM"},
+{ registro:"5483112", tipoCurso:"2022A", codigo: "222279912", nombre :"HERNANDEZ CASTILLO SUSANA DEL CARMEN", grupo:"Grupo 6", laboratorio:"3",fecha:"12 de Enero de 2022", horario:"10:00 AM a 1:00 PM"},
+{ registro:"5519186", tipoCurso:"2022A", codigo: "222279092", nombre :"HERNANDEZ DELGADILLO ARELI JAMILETH", grupo:"Grupo 6", laboratorio:"3",fecha:"12 de Enero de 2022", horario:"10:00 AM a 1:00 PM"},
+{ registro:"", tipoCurso:"2022A", codigo: "222232002", nombre :"HERNANDEZ HERNANDEZ DARLA RENATA", grupo:"Grupo 6", laboratorio:"3",fecha:"12 de Enero de 2022", horario:"10:00 AM a 1:00 PM"},
+{ registro:"5463926", tipoCurso:"2022A", codigo: "222230964", nombre :"HERNANDEZ PERALTA CARLOS ESTEBAN", grupo:"Grupo 6", laboratorio:"3",fecha:"12 de Enero de 2022", horario:"10:00 AM a 1:00 PM"},
+{ registro:"5535039", tipoCurso:"2022A", codigo: "222279866", nombre :"HERNANDEZ RAMIREZ FRANCISCO JAVIER", grupo:"Grupo 6", laboratorio:"3",fecha:"12 de Enero de 2022", horario:"10:00 AM a 1:00 PM"},
+{ registro:"5463919", tipoCurso:"2022A", codigo: "222230638", nombre :"HERNANDEZ VELAZQUEZ KEVIN ALEXANDER", grupo:"Grupo 6", laboratorio:"3",fecha:"12 de Enero de 2022", horario:"10:00 AM a 1:00 PM"},
+{ registro:"5463906", tipoCurso:"2022A", codigo: "222230786", nombre :"HERRERA MARTINEZ EMMANUEL", grupo:"Grupo 6", laboratorio:"3",fecha:"12 de Enero de 2022", horario:"10:00 AM a 1:00 PM"},
+{ registro:"5480323", tipoCurso:"2022A", codigo: "222280198", nombre :"JARA AGUILERA BRAYAN ALEJANDRO", grupo:"Grupo 6", laboratorio:"3",fecha:"12 de Enero de 2022", horario:"10:00 AM a 1:00 PM"},
+{ registro:"5528683", tipoCurso:"2022A", codigo: "222280236", nombre :"JIMENEZ COSS Y LEON FRINE ISABELLA", grupo:"Grupo 6", laboratorio:"3",fecha:"12 de Enero de 2022", horario:"10:00 AM a 1:00 PM"},
+{ registro:"5467281", tipoCurso:"2022A", codigo: "222232304", nombre :"LAMAS PEREZ GUADALUPE ALEXANDER", grupo:"Grupo 6", laboratorio:"3",fecha:"12 de Enero de 2022", horario:"10:00 AM a 1:00 PM"},
+{ registro:"5491679", tipoCurso:"2022A", codigo: "222280171", nombre :"LARA SEGURA JESUS GABRIEL", grupo:"Grupo 6", laboratorio:"3",fecha:"12 de Enero de 2022", horario:"10:00 AM a 1:00 PM"},
+{ registro:"5463952", tipoCurso:"2022A", codigo: "222231006", nombre :"LEON CHAVEZ KIMBERLY ADILENE", grupo:"Grupo 6", laboratorio:"3",fecha:"12 de Enero de 2022", horario:"10:00 AM a 1:00 PM"},
+{ registro:"5467222", tipoCurso:"2022A", codigo: "222232185", nombre :"LLAMAS SALAZAR CITLALLY MONSERRATH", grupo:"Grupo 6", laboratorio:"3",fecha:"12 de Enero de 2022", horario:"10:00 AM a 1:00 PM"},
+{ registro:"5523485", tipoCurso:"2022A", codigo: "222279483", nombre :"LOMELI GUERRERO CARLOS ALBERTO", grupo:"Grupo 6", laboratorio:"3",fecha:"12 de Enero de 2022", horario:"10:00 AM a 1:00 PM"},
+{ registro:"5463962", tipoCurso:"2022A", codigo: "222230182", nombre :"LOPEZ BERNAL BRITANY CARMELA", grupo:"Grupo 6", laboratorio:"3",fecha:"12 de Enero de 2022", horario:"10:00 AM a 1:00 PM"},
+{ registro:"5463920", tipoCurso:"2022A", codigo: "222230298", nombre :"LOPEZ CORDOVA DIEGO ALEJANDRO", grupo:"Grupo 6", laboratorio:"3",fecha:"12 de Enero de 2022", horario:"10:00 AM a 1:00 PM"},
+{ registro:"5497556", tipoCurso:"2022A", codigo: "222280007", nombre :"LOPEZ FRANCO JORGE ALEJANDRO", grupo:"Grupo 6", laboratorio:"3",fecha:"12 de Enero de 2022", horario:"10:00 AM a 1:00 PM"},
+{ registro:"5463997", tipoCurso:"2022A", codigo: "222231227", nombre :"LOPEZ GUARDADO ERICK EMMANUEL", grupo:"Grupo 6", laboratorio:"3",fecha:"12 de Enero de 2022", horario:"10:00 AM a 1:00 PM"},
+{ registro:"5507400", tipoCurso:"2022A", codigo: "222279084", nombre :"LOPEZ HERNANDEZ CHRISTIAN OSWALDO", grupo:"Grupo 6", laboratorio:"3",fecha:"12 de Enero de 2022", horario:"10:00 AM a 1:00 PM"},
+{ registro:"5463964", tipoCurso:"2022A", codigo: "222230468", nombre :"LOPEZ LUNA TIFANI JAZMIN", grupo:"Grupo 6", laboratorio:"3",fecha:"12 de Enero de 2022", horario:"10:00 AM a 1:00 PM"},
+{ registro:"", tipoCurso:"2022A", codigo: "222232177", nombre :"LOPEZ MARTIN PAMELA ELIZABETH", grupo:"Grupo 6", laboratorio:"3",fecha:"12 de Enero de 2022", horario:"10:00 AM a 1:00 PM"},
+{ registro:"5505282", tipoCurso:"2022A", codigo: "222278746", nombre :"LOPEZ ROBLES PAOLA LETSAY", grupo:"Grupo 7", laboratorio:"1",fecha:"12 de Enero de 2022", horario:"12:00 PM a 3:00 PM"},
+{ registro:"", tipoCurso:"2022A", codigo: "222231863", nombre :"LOREDO ARREAGA MICHELLE GERALDINE", grupo:"Grupo 7", laboratorio:"1",fecha:"12 de Enero de 2022", horario:"12:00 PM a 3:00 PM"},
+{ registro:"5503852", tipoCurso:"2022A", codigo: "222279688", nombre :"LUCANO SANDOVAL LINDA FABIOLA", grupo:"Grupo 7", laboratorio:"1",fecha:"12 de Enero de 2022", horario:"12:00 PM a 3:00 PM"},
+{ registro:"5463951", tipoCurso:"2022A", codigo: "222230166", nombre :"LUNA RIVERA ANGELES YOSELINN", grupo:"Grupo 7", laboratorio:"1",fecha:"12 de Enero de 2022", horario:"12:00 PM a 3:00 PM"},
+{ registro:"5491534", tipoCurso:"2022A", codigo: "222280406", nombre :"MACHUCA AVIÑA ALDO MAURICIO", grupo:"Grupo 7", laboratorio:"1",fecha:"12 de Enero de 2022", horario:"12:00 PM a 3:00 PM"},
+{ registro:"5463993", tipoCurso:"2022A", codigo: "222230956", nombre :"MACIAS BENITES XIMENA", grupo:"Grupo 7", laboratorio:"1",fecha:"12 de Enero de 2022", horario:"12:00 PM a 3:00 PM"},
+{ registro:"5467989", tipoCurso:"2022A", codigo: "222231642", nombre :"MACIAS GALVAN NAOMI JOSELYN", grupo:"Grupo 7", laboratorio:"1",fecha:"12 de Enero de 2022", horario:"12:00 PM a 3:00 PM"},
+{ registro:"5535036", tipoCurso:"2022A", codigo: "222280457", nombre :"MADRIZ MURILLO VANESSA ESTEPHANIA", grupo:"Grupo 7", laboratorio:"1",fecha:"12 de Enero de 2022", horario:"12:00 PM a 3:00 PM"},
+{ registro:"5463999", tipoCurso:"2022A", codigo: "222231219", nombre :"MAGALLON LARA CELIA IVETH", grupo:"Grupo 7", laboratorio:"1",fecha:"12 de Enero de 2022", horario:"12:00 PM a 3:00 PM"},
+{ registro:"5463928", tipoCurso:"2022A", codigo: "222231286", nombre :"MAGAÑA RUIZ ANGEL ERNESTO", grupo:"Grupo 7", laboratorio:"1",fecha:"12 de Enero de 2022", horario:"12:00 PM a 3:00 PM"},
+{ registro:"5501299", tipoCurso:"2022A", codigo: "222278835", nombre :"MARES VELEZ BRENDA VANESSA", grupo:"Grupo 7", laboratorio:"1",fecha:"12 de Enero de 2022", horario:"12:00 PM a 3:00 PM"},
+{ registro:"5466370", tipoCurso:"2022A", codigo: "222231618", nombre :"MARQUEZ VELIZ DULCE VALERIA", grupo:"Grupo 7", laboratorio:"1",fecha:"12 de Enero de 2022", horario:"12:00 PM a 3:00 PM"},
+{ registro:"5477343", tipoCurso:"2022A", codigo: "222279017", nombre :"MARTINEZ ESPARZA CRISTIAN JOSE MANUEL", grupo:"Grupo 7", laboratorio:"1",fecha:"12 de Enero de 2022", horario:"12:00 PM a 3:00 PM"},
+{ registro:"5479789", tipoCurso:"2022A", codigo: "222279327", nombre :"MARTINEZ FLORES LUIS ENRIQUE", grupo:"Grupo 7", laboratorio:"1",fecha:"12 de Enero de 2022", horario:"12:00 PM a 3:00 PM"},
+{ registro:"5526951", tipoCurso:"2022A", codigo: "222279599", nombre :"MARTINEZ GUZMAN KAREN PAULINA", grupo:"Grupo 7", laboratorio:"1",fecha:"12 de Enero de 2022", horario:"12:00 PM a 3:00 PM"},
+{ registro:"5463939", tipoCurso:"2022A", codigo: "222231235", nombre :"MARTINEZ LIZARDO ANGEL GAEL", grupo:"Grupo 7", laboratorio:"1",fecha:"12 de Enero de 2022", horario:"12:00 PM a 3:00 PM"},
+{ registro:"5528339", tipoCurso:"2022A", codigo: "222279513", nombre :"MARTINEZ MEDRANO ISIDORA MONSERRAT", grupo:"Grupo 7", laboratorio:"1",fecha:"12 de Enero de 2022", horario:"12:00 PM a 3:00 PM"},
+{ registro:"5463940", tipoCurso:"2022A", codigo: "222231081", nombre :"MELCHOR VEGA XIMENA MICHELLE", grupo:"Grupo 7", laboratorio:"1",fecha:"12 de Enero de 2022", horario:"12:00 PM a 3:00 PM"},
+{ registro:"", tipoCurso:"2022A", codigo: "222231588", nombre :"MENA RUIZ CAMILA YUVAL", grupo:"Grupo 7", laboratorio:"1",fecha:"12 de Enero de 2022", horario:"12:00 PM a 3:00 PM"},
+{ registro:"5514396", tipoCurso:"2022A", codigo: "222279025", nombre :"MENDOZA MARTINEZ KEVIN RAUL", grupo:"Grupo 7", laboratorio:"1",fecha:"12 de Enero de 2022", horario:"12:00 PM a 3:00 PM"},
+{ registro:"5486819", tipoCurso:"2022A", codigo: "222279505", nombre :"MENDOZA MORENO MIRIAM JOSSELYNE", grupo:"Grupo 7", laboratorio:"1",fecha:"12 de Enero de 2022", horario:"12:00 PM a 3:00 PM"},
+{ registro:"5526200", tipoCurso:"2022A", codigo: "222278819", nombre :"MENDOZA VILLA LESLIE DAYANNA", grupo:"Grupo 7", laboratorio:"1",fecha:"12 de Enero de 2022", horario:"12:00 PM a 3:00 PM"},
+{ registro:"5466511", tipoCurso:"2022A", codigo: "222231332", nombre :"MICHEL RAMIREZ ANIELA FERNANDA", grupo:"Grupo 7", laboratorio:"1",fecha:"12 de Enero de 2022", horario:"12:00 PM a 3:00 PM"},
+{ registro:"", tipoCurso:"2022A", codigo: "222231715", nombre :"MONTES GONZALEZ LUIS SANTIAGO", grupo:"Grupo 7", laboratorio:"1",fecha:"12 de Enero de 2022", horario:"12:00 PM a 3:00 PM"},
+{ registro:"5506441", tipoCurso:"2022A", codigo: "222279645", nombre :"MORA CEBALLOS DANIEL", grupo:"Grupo 7", laboratorio:"1",fecha:"12 de Enero de 2022", horario:"12:00 PM a 3:00 PM"},
+{ registro:"5463956", tipoCurso:"2022A", codigo: "222230719", nombre :"MORA RUVALCABA JOSE MIGUEL", grupo:"Grupo 8", laboratorio:"2",fecha:"12 de Enero de 2022", horario:"12:00 PM a 3:00 PM"},
+{ registro:"5464000", tipoCurso:"2022A", codigo: "222230484", nombre :"MORALES PEREZ JOSE FERNANDO", grupo:"Grupo 8", laboratorio:"2",fecha:"12 de Enero de 2022", horario:"12:00 PM a 3:00 PM"},
+{ registro:"5484426", tipoCurso:"2022A", codigo: "222278983", nombre :"MORENO ARGUELLES ESTRELLA ARIZBETH", grupo:"Grupo 8", laboratorio:"2",fecha:"12 de Enero de 2022", horario:"12:00 PM a 3:00 PM"},
+{ registro:"5527418", tipoCurso:"2022A", codigo: "222279173", nombre :"MORENO QUIROZ JEAN MICHELL", grupo:"Grupo 8", laboratorio:"2",fecha:"12 de Enero de 2022", horario:"12:00 PM a 3:00 PM"},
+{ registro:"5500241", tipoCurso:"2022A", codigo: "222280422", nombre :"MUÑIZ MAGAÑA MARIANA", grupo:"Grupo 8", laboratorio:"2",fecha:"12 de Enero de 2022", horario:"12:00 PM a 3:00 PM"},
+{ registro:"5507110", tipoCurso:"2022A", codigo: "222279467", nombre :"MUÑOZ GARCIA BRYAN ALEJANDRO", grupo:"Grupo 8", laboratorio:"2",fecha:"12 de Enero de 2022", horario:"12:00 PM a 3:00 PM"},
+{ registro:"5463917", tipoCurso:"2022A", codigo: "222230379", nombre :"MUÑOZ MORALES JAVIER ALDAIR", grupo:"Grupo 8", laboratorio:"2",fecha:"12 de Enero de 2022", horario:"12:00 PM a 3:00 PM"},
+{ registro:"5466317", tipoCurso:"2022A", codigo: "222231596", nombre :"MUÑOZ MORALES NATANAEL", grupo:"Grupo 8", laboratorio:"2",fecha:"12 de Enero de 2022", horario:"12:00 PM a 3:00 PM"},
+{ registro:"5463968", tipoCurso:"2022A", codigo: "222230336", nombre :"MUÑOZ PRECIADO DIEGO ALEJANDRO", grupo:"Grupo 8", laboratorio:"2",fecha:"12 de Enero de 2022", horario:"12:00 PM a 3:00 PM"},
+{ registro:"5512354", tipoCurso:"2022A", codigo: "222278843", nombre :"MUÑOZ RAMOS DANIEL ALESSANDRO", grupo:"Grupo 8", laboratorio:"2",fecha:"12 de Enero de 2022", horario:"12:00 PM a 3:00 PM"},
+{ registro:"5502953", tipoCurso:"2022A", codigo: "222279106", nombre :"MUÑOZ TINOCO WENDY ALEXANDRA", grupo:"Grupo 8", laboratorio:"2",fecha:"12 de Enero de 2022", horario:"12:00 PM a 3:00 PM"},
+{ registro:"5463990", tipoCurso:"2022A", codigo: "222230662", nombre :"MURO GOMEZ LUNA SIRUKI", grupo:"Grupo 8", laboratorio:"2",fecha:"12 de Enero de 2022", horario:"12:00 PM a 3:00 PM"},
+{ registro:"5463983", tipoCurso:"2022A", codigo: "222230999", nombre :"NAVA MEZA CESAR IVAN", grupo:"Grupo 8", laboratorio:"2",fecha:"12 de Enero de 2022", horario:"12:00 PM a 3:00 PM"},
+{ registro:"", tipoCurso:"2022A", codigo: "222231499", nombre :"NAVARRETE SALAZAR ALONDRA VALERIA", grupo:"Grupo 8", laboratorio:"2",fecha:"12 de Enero de 2022", horario:"12:00 PM a 3:00 PM"},
+{ registro:"5463946", tipoCurso:"2022A", codigo: "222230387", nombre :"NAVARRO ROQUE PABLO ALESSANDRO", grupo:"Grupo 8", laboratorio:"2",fecha:"12 de Enero de 2022", horario:"12:00 PM a 3:00 PM"},
+{ registro:"", tipoCurso:"2022A", codigo: "222231405", nombre :"NERI MORENO SABINA SOFIA", grupo:"Grupo 8", laboratorio:"2",fecha:"12 de Enero de 2022", horario:"12:00 PM a 3:00 PM"},
+{ registro:"5523417", tipoCurso:"2022A", codigo: "222280325", nombre :"NOVOA GUERRERO DIEGO JAVIER", grupo:"Grupo 8", laboratorio:"2",fecha:"12 de Enero de 2022", horario:"12:00 PM a 3:00 PM"},
+{ registro:"5463995", tipoCurso:"2022A", codigo: "222230743", nombre :"NUÑEZ MEDINA PEDRO SEBASTIAN", grupo:"Grupo 8", laboratorio:"2",fecha:"12 de Enero de 2022", horario:"12:00 PM a 3:00 PM"},
+{ registro:"5500946", tipoCurso:"2022A", codigo: "222279947", nombre :"OCEGUERA RODRIGUEZ JOSE ANTONIO", grupo:"Grupo 8", laboratorio:"2",fecha:"12 de Enero de 2022", horario:"12:00 PM a 3:00 PM"},
+{ registro:"5529099", tipoCurso:"2022A", codigo: "222280287", nombre :"OCHOA GOMEZ ARTURO DAVID", grupo:"Grupo 8", laboratorio:"2",fecha:"12 de Enero de 2022", horario:"12:00 PM a 3:00 PM"},
+{ registro:"5463931", tipoCurso:"2022A", codigo: "222230549", nombre :"OLIDEN CAMACHO LUIS ENRIQUE", grupo:"Grupo 8", laboratorio:"2",fecha:"12 de Enero de 2022", horario:"12:00 PM a 3:00 PM"},
+{ registro:"", tipoCurso:"2022A", codigo: "222232096", nombre :"OLIVARES HERNANDEZ CARLOS IVAN", grupo:"Grupo 8", laboratorio:"2",fecha:"12 de Enero de 2022", horario:"12:00 PM a 3:00 PM"},
+{ registro:"5463908", tipoCurso:"2022A", codigo: "222230883", nombre :"ORNELAS CUAUTLE LUIS JAVIER", grupo:"Grupo 8", laboratorio:"2",fecha:"12 de Enero de 2022", horario:"12:00 PM a 3:00 PM"},
+{ registro:"5508014", tipoCurso:"2022A", codigo: "222278738", nombre :"OROZCO DOMINGUEZ EDGAR DAVID", grupo:"Grupo 8", laboratorio:"2",fecha:"12 de Enero de 2022", horario:"12:00 PM a 3:00 PM"},
+{ registro:"5515101", tipoCurso:"2022A", codigo: "222279408", nombre :"OROZCO IÑIGUEZ MARIA FERNANDA", grupo:"Grupo 8", laboratorio:"2",fecha:"12 de Enero de 2022", horario:"12:00 PM a 3:00 PM"},
+{ registro:"5521886", tipoCurso:"2022A", codigo: "222280392", nombre :"OROZCO RAMOS JAVIER ARATH", grupo:"Grupo 9", laboratorio:"3",fecha:"12 de Enero de 2022", horario:"12:00 PM a 3:00 PM"},
+{ registro:"5487540", tipoCurso:"2022A", codigo: "222279556", nombre :"ORTEGA PADILLA ANGEL URIEL", grupo:"Grupo 9", laboratorio:"3",fecha:"12 de Enero de 2022", horario:"12:00 PM a 3:00 PM"},
+{ registro:"5487522", tipoCurso:"2022A", codigo: "222279076", nombre :"ORTEGA PADILLA CARLOS YAEL", grupo:"Grupo 9", laboratorio:"3",fecha:"12 de Enero de 2022", horario:"12:00 PM a 3:00 PM"},
+{ registro:"5463982", tipoCurso:"2022A", codigo: "222230271", nombre :"ORTEGA PARTIDA AXEL MANUEL", grupo:"Grupo 9", laboratorio:"3",fecha:"12 de Enero de 2022", horario:"12:00 PM a 3:00 PM"},
+{ registro:"5491174", tipoCurso:"2022A", codigo: "222280244", nombre :"ORTIZ CORTES ANA VALERIA ALEJANDRA", grupo:"Grupo 9", laboratorio:"3",fecha:"12 de Enero de 2022", horario:"12:00 PM a 3:00 PM"},
+{ registro:"5501255", tipoCurso:"2022A", codigo: "222280147", nombre :"ORTIZ GARCIA ANDREA ELIZABETH", grupo:"Grupo 9", laboratorio:"3",fecha:"12 de Enero de 2022", horario:"12:00 PM a 3:00 PM"},
+{ registro:"5509341", tipoCurso:"2022A", codigo: "222278886", nombre :"ORTIZ GUTIERREZ CAROL ALEXA", grupo:"Grupo 9", laboratorio:"3",fecha:"12 de Enero de 2022", horario:"12:00 PM a 3:00 PM"},
+{ registro:"", tipoCurso:"2022A", codigo: "", nombre :"ORTIZ JUAREZ ANGEL ISAAC", grupo:"Grupo 9", laboratorio:"3",fecha:"12 de Enero de 2022", horario:"12:00 PM a 3:00 PM"},
+{ registro:"5463989", tipoCurso:"2022A", codigo: "222230573", nombre :"ORTIZ PEDROZA BRYAN GEOVANY", grupo:"Grupo 9", laboratorio:"3",fecha:"12 de Enero de 2022", horario:"12:00 PM a 3:00 PM"},
+{ registro:"5502651", tipoCurso:"2022A", codigo: "222278797", nombre :"ORTIZ VELASCO MARIA GORETI", grupo:"Grupo 9", laboratorio:"3",fecha:"12 de Enero de 2022", horario:"12:00 PM a 3:00 PM"},
+{ registro:"5517257", tipoCurso:"2022A", codigo: "222279971", nombre :"PACHECO MERA ELIAS EMILIANO", grupo:"Grupo 9", laboratorio:"3",fecha:"12 de Enero de 2022", horario:"12:00 PM a 3:00 PM"},
+{ registro:"5494341", tipoCurso:"2022A", codigo: "222279122", nombre :"PADILLA MEDINA DIEGO ARMANDO", grupo:"Grupo 9", laboratorio:"3",fecha:"12 de Enero de 2022", horario:"12:00 PM a 3:00 PM"},
+{ registro:"", tipoCurso:"2022A", codigo: "222231448", nombre :"PALMA CORONA ALICIA MONSERRAT", grupo:"Grupo 9", laboratorio:"3",fecha:"12 de Enero de 2022", horario:"12:00 PM a 3:00 PM"},
+{ registro:"", tipoCurso:"2022A", codigo: "222232215", nombre :"PALMA FERNANDEZ ARES EMANUEL", grupo:"Grupo 9", laboratorio:"3",fecha:"12 de Enero de 2022", horario:"12:00 PM a 3:00 PM"},
+{ registro:"5463915", tipoCurso:"2022A", codigo: "222231065", nombre :"PARRA ESCARCEGA FIDEL SANTIAGO", grupo:"Grupo 9", laboratorio:"3",fecha:"12 de Enero de 2022", horario:"12:00 PM a 3:00 PM"},
+{ registro:"5466185", tipoCurso:"2022A", codigo: "222232142", nombre :"PARRA MARTINEZ LUIS ROALDO", grupo:"Grupo 9", laboratorio:"3",fecha:"12 de Enero de 2022", horario:"12:00 PM a 3:00 PM"},
+{ registro:"", tipoCurso:"2022A", codigo: "", nombre :"PARRA SALCEDO MARIA ARELI", grupo:"Grupo 9", laboratorio:"3",fecha:"12 de Enero de 2022", horario:"12:00 PM a 3:00 PM"},
+{ registro:"5511430", tipoCurso:"2022A", codigo: "222279165", nombre :"PEDROZA GUZMAN ANGELES JAZMIN", grupo:"Grupo 9", laboratorio:"3",fecha:"12 de Enero de 2022", horario:"12:00 PM a 3:00 PM"},
+{ registro:"", tipoCurso:"2022A", codigo: "222231456", nombre :"PEÑA VENEGAS MARIA ANTONIA", grupo:"Grupo 9", laboratorio:"3",fecha:"12 de Enero de 2022", horario:"12:00 PM a 3:00 PM"},
+{ registro:"5522789", tipoCurso:"2022A", codigo: "222278789", nombre :"PEREZ . ARIDAY", grupo:"Grupo 9", laboratorio:"3",fecha:"12 de Enero de 2022", horario:"12:00 PM a 3:00 PM"},
+{ registro:"5463994", tipoCurso:"2022A", codigo: "222230689", nombre :"PEREZ BARAJAS RICARDO ANTONIO", grupo:"Grupo 9", laboratorio:"3",fecha:"12 de Enero de 2022", horario:"12:00 PM a 3:00 PM"},
+{ registro:"", tipoCurso:"2022A", codigo: "", nombre :"PEREZ ESPARZA BRYAN GAEL", grupo:"Grupo 9", laboratorio:"3",fecha:"12 de Enero de 2022", horario:"12:00 PM a 3:00 PM"},
+{ registro:"5509312", tipoCurso:"2022A", codigo: "222279157", nombre :"PEREZ GARCIA ASHLEY CAMILA", grupo:"Grupo 9", laboratorio:"3",fecha:"12 de Enero de 2022", horario:"12:00 PM a 3:00 PM"},
+{ registro:"5507550", tipoCurso:"2022A", codigo: "222280082", nombre :"PEREZ MARTINEZ ARIANNA BERENICE", grupo:"Grupo 9", laboratorio:"3",fecha:"12 de Enero de 2022", horario:"12:00 PM a 3:00 PM"},
+{ registro:"5466440", tipoCurso:"2022A", codigo: "222231324", nombre :"PEREZ NUÑO CARLOS ABRAHAM", grupo:"Grupo 9", laboratorio:"3",fecha:"12 de Enero de 2022", horario:"12:00 PM a 3:00 PM"},
+{ registro:"", tipoCurso:"2022A", codigo: "", nombre :"PEREZ OLIVARES GIBRAN", grupo:"Grupo 10", laboratorio:"1",fecha:"12 de Enero de 2022", horario:"2:00 PM a 5:00 PM"},
+{ registro:"5535048", tipoCurso:"2022A", codigo: "222279246", nombre :"PEREZ PADRON DANNIA NAMITZIM", grupo:"Grupo 10", laboratorio:"1",fecha:"12 de Enero de 2022", horario:"2:00 PM a 5:00 PM"},
+{ registro:"5502969", tipoCurso:"2022A", codigo: "222278762", nombre :"PEREZ SANTAMARIA DIEGO ANDRE", grupo:"Grupo 10", laboratorio:"1",fecha:"12 de Enero de 2022", horario:"2:00 PM a 5:00 PM"},
+{ registro:"5466604", tipoCurso:"2022A", codigo: "222231669", nombre :"PEZA MUÑOZ AIDE ARACELI", grupo:"Grupo 10", laboratorio:"1",fecha:"12 de Enero de 2022", horario:"2:00 PM a 5:00 PM"},
+{ registro:"5505323", tipoCurso:"2022A", codigo: "222278967", nombre :"PIEDRA TORIBIO ALEXANDRO", grupo:"Grupo 10", laboratorio:"1",fecha:"12 de Enero de 2022", horario:"2:00 PM a 5:00 PM"},
+{ registro:"5509230", tipoCurso:"2022A", codigo: "222279564", nombre :"PONCE MOLINA LESLY FERNANDA", grupo:"Grupo 10", laboratorio:"1",fecha:"12 de Enero de 2022", horario:"2:00 PM a 5:00 PM"},
+{ registro:"", tipoCurso:"2022A", codigo: "222232045", nombre :"PRADO BECERRA SANTANA GAEL", grupo:"Grupo 10", laboratorio:"1",fecha:"12 de Enero de 2022", horario:"2:00 PM a 5:00 PM"},
+{ registro:"", tipoCurso:"2022A", codigo: "222231316", nombre :"PRESCIADO CORONA JORGE", grupo:"Grupo 10", laboratorio:"1",fecha:"12 de Enero de 2022", horario:"2:00 PM a 5:00 PM"},
+{ registro:"5507952", tipoCurso:"2022A", codigo: "222278754", nombre :"QUINTERO DE LA TORRE AQUILES SAMUEL", grupo:"Grupo 10", laboratorio:"1",fecha:"12 de Enero de 2022", horario:"2:00 PM a 5:00 PM"},
+{ registro:"5489102", tipoCurso:"2022A", codigo: "222280449", nombre :"RAMIREZ GOMEZ KARLA BELEN", grupo:"Grupo 10", laboratorio:"1",fecha:"12 de Enero de 2022", horario:"2:00 PM a 5:00 PM"},
+{ registro:"5526214", tipoCurso:"2022A", codigo: "222279726", nombre :"RAMIREZ GUTIERREZ EMILIANO", grupo:"Grupo 10", laboratorio:"1",fecha:"12 de Enero de 2022", horario:"2:00 PM a 5:00 PM"},
+{ registro:"5535043", tipoCurso:"2022A", codigo: "222279785", nombre :"RAMIREZ SALAZAR MIGUEL ANGEL", grupo:"Grupo 10", laboratorio:"1",fecha:"12 de Enero de 2022", horario:"2:00 PM a 5:00 PM"},
+{ registro:"", tipoCurso:"2022A", codigo: "", nombre :"RAMIREZ VASQUEZ ROCIO", grupo:"Grupo 10", laboratorio:"1",fecha:"12 de Enero de 2022", horario:"2:00 PM a 5:00 PM"},
+{ registro:"5491833", tipoCurso:"2022A", codigo: "222279963", nombre :"RAMIREZ VAZQUEZ BRIAN ALEJANDRO", grupo:"Grupo 10", laboratorio:"1",fecha:"12 de Enero de 2022", horario:"2:00 PM a 5:00 PM"},
+{ registro:"", tipoCurso:"2022A", codigo: "", nombre :"RAMOS  ESPINOZA ALEXANDRA ROCIO", grupo:"Grupo 10", laboratorio:"1",fecha:"12 de Enero de 2022", horario:"2:00 PM a 5:00 PM"},
+{ registro:"5463972", tipoCurso:"2022A", codigo: "222230263", nombre :"RAMOS ELVIRO LESLIE ANEL", grupo:"Grupo 10", laboratorio:"1",fecha:"12 de Enero de 2022", horario:"2:00 PM a 5:00 PM"},
+{ registro:"5507200", tipoCurso:"2022A", codigo: "222279475", nombre :"RAMOS MENDOZA ANDRES", grupo:"Grupo 10", laboratorio:"1",fecha:"12 de Enero de 2022", horario:"2:00 PM a 5:00 PM"},
+{ registro:"5466260", tipoCurso:"2022A", codigo: "222231944", nombre :"RASCON PADILLA DIEGO MISSAEL", grupo:"Grupo 10", laboratorio:"1",fecha:"12 de Enero de 2022", horario:"2:00 PM a 5:00 PM"},
+{ registro:"", tipoCurso:"2022A", codigo: "", nombre :"REGALADO DIAZ PAULINA NOEMI", grupo:"Grupo 10", laboratorio:"1",fecha:"12 de Enero de 2022", horario:"2:00 PM a 5:00 PM"},
+{ registro:"5463996", tipoCurso:"2022A", codigo: "222231189", nombre :"REGALADO PEREZ DANIELA MONTSERRAT", grupo:"Grupo 10", laboratorio:"1",fecha:"12 de Enero de 2022", horario:"2:00 PM a 5:00 PM"},
+{ registro:"", tipoCurso:"2022A", codigo: "", nombre :"REGIN ALCARAZ ADRIAN ALEJANDRO", grupo:"Grupo 10", laboratorio:"1",fecha:"12 de Enero de 2022", horario:"2:00 PM a 5:00 PM"},
+{ registro:"5498643", tipoCurso:"2022A", codigo: "222280279", nombre :"REYES BARRERA MELISSA GUADALUPE", grupo:"Grupo 10", laboratorio:"1",fecha:"12 de Enero de 2022", horario:"2:00 PM a 5:00 PM"},
+{ registro:"5463913", tipoCurso:"2022A", codigo: "222230328", nombre :"REYES MORA ANGEL DE JESUS", grupo:"Grupo 10", laboratorio:"1",fecha:"12 de Enero de 2022", horario:"2:00 PM a 5:00 PM"},
+{ registro:"", tipoCurso:"2022A", codigo: "222231847", nombre :"REYES VELAZQUEZ MILDRED VALERIA", grupo:"Grupo 10", laboratorio:"1",fecha:"12 de Enero de 2022", horario:"2:00 PM a 5:00 PM"},
+{ registro:"", tipoCurso:"2022A", codigo: "", nombre :"RIOS ENCARNACIÓN ANGEL LEONEL", grupo:"Grupo 10", laboratorio:"1",fecha:"12 de Enero de 2022", horario:"2:00 PM a 5:00 PM"},
+{ registro:"5463979", tipoCurso:"2022A", codigo: "222230972", nombre :"RIOS RENTERIA VANESSA GERALDINE", grupo:"Grupo 11", laboratorio:"2",fecha:"12 de Enero de 2022", horario:"2:00 PM a 5:00 PM"},
+{ registro:"5463967", tipoCurso:"2022A", codigo: "222230816", nombre :"RIVAS MENDEZ MARIA DE JESUS", grupo:"Grupo 11", laboratorio:"2",fecha:"12 de Enero de 2022", horario:"2:00 PM a 5:00 PM"},
+{ registro:"5463970", tipoCurso:"2022A", codigo: "222230344", nombre :"RIVAS SAHAGUN YARA ROMINA", grupo:"Grupo 11", laboratorio:"2",fecha:"12 de Enero de 2022", horario:"2:00 PM a 5:00 PM"},
+{ registro:"", tipoCurso:"2022A", codigo: "222232274", nombre :"RIVERA SEGURA DANIELA", grupo:"Grupo 11", laboratorio:"2",fecha:"12 de Enero de 2022", horario:"2:00 PM a 5:00 PM"},
+{ registro:"5499073", tipoCurso:"2022A", codigo: "222278932", nombre :"ROBLES MONTES VALERIA GUADALUPE", grupo:"Grupo 11", laboratorio:"2",fecha:"12 de Enero de 2022", horario:"2:00 PM a 5:00 PM"},
+{ registro:"5479320", tipoCurso:"2022A", codigo: "222279149", nombre :"ROBLES PULIDO DALIA BERENISE", grupo:"Grupo 11", laboratorio:"2",fecha:"12 de Enero de 2022", horario:"2:00 PM a 5:00 PM"},
+{ registro:"5467451", tipoCurso:"2022A", codigo: "222231545", nombre :"RODAS CASTAÑEDA OLIVER ALBERTO", grupo:"Grupo 11", laboratorio:"2",fecha:"12 de Enero de 2022", horario:"2:00 PM a 5:00 PM"},
+{ registro:"5463942", tipoCurso:"2022A", codigo: "222231294", nombre :"RODRIGUEZ GAMIÑO WALDO YARETH", grupo:"Grupo 11", laboratorio:"2",fecha:"12 de Enero de 2022", horario:"2:00 PM a 5:00 PM"},
+{ registro:"", tipoCurso:"2022A", codigo: "", nombre :"RODRIGUEZ LARA MARIA FERNANDA", grupo:"Grupo 11", laboratorio:"2",fecha:"12 de Enero de 2022", horario:"2:00 PM a 5:00 PM"},
+{ registro:"5463943", tipoCurso:"2022A", codigo: "222231146", nombre :"RODRIGUEZ MUCIÑO GEMMA YAMILETH", grupo:"Grupo 11", laboratorio:"2",fecha:"12 de Enero de 2022", horario:"2:00 PM a 5:00 PM"},
+{ registro:"5467795", tipoCurso:"2022A", codigo: "222232266", nombre :"RODRIGUEZ NUÑEZ KAREN MONSERRAT", grupo:"Grupo 11", laboratorio:"2",fecha:"12 de Enero de 2022", horario:"2:00 PM a 5:00 PM"},
+{ registro:"5463935", tipoCurso:"2022A", codigo: "222230301", nombre :"RODRIGUEZ ORTIZ LAYONELL JACIEL", grupo:"Grupo 11", laboratorio:"2",fecha:"12 de Enero de 2022", horario:"2:00 PM a 5:00 PM"},
+{ registro:"5463958", tipoCurso:"2022A", codigo: "222230476", nombre :"RODRIGUEZ TORRES JUAN PABLO", grupo:"Grupo 11", laboratorio:"2",fecha:"12 de Enero de 2022", horario:"2:00 PM a 5:00 PM"},
+{ registro:"5463960", tipoCurso:"2022A", codigo: "222231251", nombre :"ROJAS VALADEZ YAHIR ALEJANDRO", grupo:"Grupo 11", laboratorio:"2",fecha:"12 de Enero de 2022", horario:"2:00 PM a 5:00 PM"},
+{ registro:"5522082", tipoCurso:"2022A", codigo: "222279297", nombre :"ROJO VASQUEZ IRIS VANESSA", grupo:"Grupo 11", laboratorio:"2",fecha:"12 de Enero de 2022", horario:"2:00 PM a 5:00 PM"},
+{ registro:"5479396", tipoCurso:"2022A", codigo: "222279491", nombre :"ROMERO GONZALEZ JORGE EZEQUIEL", grupo:"Grupo 11", laboratorio:"2",fecha:"12 de Enero de 2022", horario:"2:00 PM a 5:00 PM"},
+{ registro:"5463944", tipoCurso:"2022A", codigo: "222231243", nombre :"ROMO RAMIREZ CARLA ESTEFANIA", grupo:"Grupo 11", laboratorio:"2",fecha:"12 de Enero de 2022", horario:"2:00 PM a 5:00 PM"},
+{ registro:"", tipoCurso:"2022A", codigo: "", nombre :"RUIZ  VALENZUELA JUAN DANIEL", grupo:"Grupo 11", laboratorio:"2",fecha:"12 de Enero de 2022", horario:"2:00 PM a 5:00 PM"},
+{ registro:"5535046", tipoCurso:"2022A", codigo: "222279629", nombre :"RUIZ ACOSTA NORBERTO DE JESUS", grupo:"Grupo 11", laboratorio:"2",fecha:"12 de Enero de 2022", horario:"2:00 PM a 5:00 PM"},
+{ registro:"", tipoCurso:"2022A", codigo: "222231804", nombre :"RUIZ BERNAL EVELYN MONSERRATH", grupo:"Grupo 11", laboratorio:"2",fecha:"12 de Enero de 2022", horario:"2:00 PM a 5:00 PM"},
+{ registro:"", tipoCurso:"2022A", codigo: "", nombre :"RUIZ FLORES DANA PAOLA", grupo:"Grupo 11", laboratorio:"2",fecha:"12 de Enero de 2022", horario:"2:00 PM a 5:00 PM"},
+{ registro:"", tipoCurso:"2022A", codigo: "", nombre :"RUIZ FLORES LESLIE MICHELLE", grupo:"Grupo 11", laboratorio:"2",fecha:"12 de Enero de 2022", horario:"2:00 PM a 5:00 PM"},
+{ registro:"5463948", tipoCurso:"2022A", codigo: "222231197", nombre :"RUIZ GONZALEZ PAVEL EMILIANO", grupo:"Grupo 11", laboratorio:"2",fecha:"12 de Enero de 2022", horario:"2:00 PM a 5:00 PM"},
+{ registro:"5463924", tipoCurso:"2022A", codigo: "222230751", nombre :"RUVALCABA FONSECA PABLO TOMAS", grupo:"Grupo 11", laboratorio:"2",fecha:"12 de Enero de 2022", horario:"2:00 PM a 5:00 PM"},
+{ registro:"", tipoCurso:"2022A", codigo: "222231529", nombre :"RUVALCABA HERNANDEZ LESLIE FERNANDA", grupo:"Grupo 11", laboratorio:"2",fecha:"12 de Enero de 2022", horario:"2:00 PM a 5:00 PM"},
+{ registro:"5496570", tipoCurso:"2022A", codigo: "222279831", nombre :"SALAS VIZCARRA EVELYN ADRIANA", grupo:"Grupo 12", laboratorio:"3",fecha:"12 de Enero de 2022", horario:"2:00 PM a 5:00 PM"},
+{ registro:"", tipoCurso:"2022A", codigo: "222231855", nombre :"SALAZAR GALVEZ CRISTOPHER ADRIAN", grupo:"Grupo 12", laboratorio:"3",fecha:"12 de Enero de 2022", horario:"2:00 PM a 5:00 PM"},
+{ registro:"5535056", tipoCurso:"2022A", codigo: "222279874", nombre :"SANCHEZ MARTINEZ ARIANNA JAQUELINE", grupo:"Grupo 12", laboratorio:"3",fecha:"12 de Enero de 2022", horario:"2:00 PM a 5:00 PM"},
+{ registro:"5463978", tipoCurso:"2022A", codigo: "222230409", nombre :"SANCHEZ ONTIVEROS MIA HIROMI", grupo:"Grupo 12", laboratorio:"3",fecha:"12 de Enero de 2022", horario:"2:00 PM a 5:00 PM"},
+{ registro:"5494437", tipoCurso:"2022A", codigo: "222278975", nombre :"SANCHEZ RAMOS NELLY MICHELLE", grupo:"Grupo 12", laboratorio:"3",fecha:"12 de Enero de 2022", horario:"2:00 PM a 5:00 PM"},
+{ registro:"5520192", tipoCurso:"2022A", codigo: "222280031", nombre :"SANCHEZ SILVA FABIAN EDUARDO", grupo:"Grupo 12", laboratorio:"3",fecha:"12 de Enero de 2022", horario:"2:00 PM a 5:00 PM"},
+{ registro:"5505427", tipoCurso:"2022A", codigo: "222279734", nombre :"SANDOVAL ZERMEÑO NAHOMY CAROLINA", grupo:"Grupo 12", laboratorio:"3",fecha:"12 de Enero de 2022", horario:"2:00 PM a 5:00 PM"},
+{ registro:"5463921", tipoCurso:"2022A", codigo: "222231049", nombre :"SANTIAGO MARTINEZ ANDONI ZAHIR", grupo:"Grupo 12", laboratorio:"3",fecha:"12 de Enero de 2022", horario:"2:00 PM a 5:00 PM"},
+{ registro:"5530017", tipoCurso:"2022A", codigo: "222279238", nombre :"SANTILLAN ARCE KARINA LIZETT", grupo:"Grupo 12", laboratorio:"3",fecha:"12 de Enero de 2022", horario:"2:00 PM a 5:00 PM"},
+{ registro:"", tipoCurso:"2022A", codigo: "", nombre :"SERVIN SANCHEZ DIANA CAMILIA", grupo:"Grupo 12", laboratorio:"3",fecha:"12 de Enero de 2022", horario:"2:00 PM a 5:00 PM"},
+{ registro:"5535049", tipoCurso:"2022A", codigo: "222280317", nombre :"SILVA SANCHEZ OSCAR  JOVANI", grupo:"Grupo 12", laboratorio:"3",fecha:"12 de Enero de 2022", horario:"2:00 PM a 5:00 PM"},
+{ registro:"5509368", tipoCurso:"2022A", codigo: "222279742", nombre :"SOLORIO BARAJAS JHOANA ALEXANDRA", grupo:"Grupo 12", laboratorio:"3",fecha:"12 de Enero de 2022", horario:"2:00 PM a 5:00 PM"},
+{ registro:"5508798", tipoCurso:"2022A", codigo: "222278959", nombre :"SOLORZA HERNANDEZ CRISTIAN ALBERTO", grupo:"Grupo 12", laboratorio:"3",fecha:"12 de Enero de 2022", horario:"2:00 PM a 5:00 PM"},
+{ registro:"5482071", tipoCurso:"2022A", codigo: "222279998", nombre :"SOTO AREVALO AMAIA DESIREE", grupo:"Grupo 12", laboratorio:"3",fecha:"12 de Enero de 2022", horario:"2:00 PM a 5:00 PM"},
+{ registro:"5463910", tipoCurso:"2022A", codigo: "222230913", nombre :"SOTO VALDEZ MARCO ANTONIO", grupo:"Grupo 12", laboratorio:"3",fecha:"12 de Enero de 2022", horario:"2:00 PM a 5:00 PM"},
+{ registro:"", tipoCurso:"2022A", codigo: "222232134", nombre :"SUAREZ HERNANDEZ IVAN", grupo:"Grupo 12", laboratorio:"3",fecha:"12 de Enero de 2022", horario:"2:00 PM a 5:00 PM"},
+{ registro:"", tipoCurso:"2022A", codigo: "222231367", nombre :"TEJEDA CASILLAS DIEGO SAID", grupo:"Grupo 12", laboratorio:"3",fecha:"12 de Enero de 2022", horario:"2:00 PM a 5:00 PM"},
+{ registro:"5463961", tipoCurso:"2022A", codigo: "222230824", nombre :"TELLEZ HERNANDEZ KEVIN LEONARDO", grupo:"Grupo 12", laboratorio:"3",fecha:"12 de Enero de 2022", horario:"2:00 PM a 5:00 PM"},
+{ registro:"5463936", tipoCurso:"2022A", codigo: "222230921", nombre :"TORRES MURILLO OCTAVIO ADRIAN", grupo:"Grupo 12", laboratorio:"3",fecha:"12 de Enero de 2022", horario:"2:00 PM a 5:00 PM"},
+{ registro:"", tipoCurso:"2022A", codigo: "222232207", nombre :"TORRES NUÑEZ TONATHZY SENYACET", grupo:"Grupo 12", laboratorio:"3",fecha:"12 de Enero de 2022", horario:"2:00 PM a 5:00 PM"},
+{ registro:"5463974", tipoCurso:"2022A", codigo: "222230905", nombre :"TREJO VAZQUEZ ARIANA QUETZALLI", grupo:"Grupo 12", laboratorio:"3",fecha:"12 de Enero de 2022", horario:"2:00 PM a 5:00 PM"},
+{ registro:"5467113", tipoCurso:"2022A", codigo: "222231901", nombre :"TRELLES PRADO EMILIO YAEL", grupo:"Grupo 12", laboratorio:"3",fecha:"12 de Enero de 2022", horario:"2:00 PM a 5:00 PM"},
+{ registro:"5463949", tipoCurso:"2022A", codigo: "222230808", nombre :"URBINA LOZANO ANDREA NAYELI", grupo:"Grupo 12", laboratorio:"3",fecha:"12 de Enero de 2022", horario:"2:00 PM a 5:00 PM"},
+{ registro:"5466675", tipoCurso:"2022A", codigo: "222231375", nombre :"VALADEZ SANCHEZ JOSSMAN MANUEL", grupo:"Grupo 12", laboratorio:"3",fecha:"12 de Enero de 2022", horario:"2:00 PM a 5:00 PM"},
+{ registro:"5535032", tipoCurso:"2022A", codigo: "222279858", nombre :"VAQUERA ROSAS DIEGO IVAN ALEJANDRO", grupo:"Grupo 12", laboratorio:"3",fecha:"12 de Enero de 2022", horario:"2:00 PM a 5:00 PM"},
+{ registro:"", tipoCurso:"2022A", codigo: "", nombre :"VARGAS MONTES GAEL NICOLAR", grupo:"Grupo 13", laboratorio:"1",fecha:"12 de Enero de 2022", horario:"4:00 PM a 7:00 PM"},
+{ registro:"", tipoCurso:"2022A", codigo: "222231952", nombre :"VAZQUEZ BARAJAS RAUL ALEJANDRO", grupo:"Grupo 13", laboratorio:"1",fecha:"12 de Enero de 2022", horario:"4:00 PM a 7:00 PM"},
+{ registro:"5463977", tipoCurso:"2022A", codigo: "222230603", nombre :"VAZQUEZ BARBERO ERICK ISRAEL", grupo:"Grupo 13", laboratorio:"1",fecha:"12 de Enero de 2022", horario:"4:00 PM a 7:00 PM"},
+{ registro:"5463992", tipoCurso:"2022A", codigo: "222230514", nombre :"VAZQUEZ BARRERAS VALERIA AIME", grupo:"Grupo 13", laboratorio:"1",fecha:"12 de Enero de 2022", horario:"4:00 PM a 7:00 PM"},
+{ registro:"5488454", tipoCurso:"2022A", codigo: "222279343", nombre :"VAZQUEZ CARDENAS ATHZIRI LIZBETH", grupo:"Grupo 13", laboratorio:"1",fecha:"12 de Enero de 2022", horario:"4:00 PM a 7:00 PM"},
+{ registro:"5463929", tipoCurso:"2022A", codigo: "222230522", nombre :"VAZQUEZ MARQUEZ JOHAN EMIR", grupo:"Grupo 13", laboratorio:"1",fecha:"12 de Enero de 2022", horario:"4:00 PM a 7:00 PM"},
+{ registro:"5463986", tipoCurso:"2022A", codigo: "222230832", nombre :"VAZQUEZ RODRIGUEZ CATIA ALEJANDRA", grupo:"Grupo 13", laboratorio:"1",fecha:"12 de Enero de 2022", horario:"4:00 PM a 7:00 PM"},
+{ registro:"", tipoCurso:"2022A", codigo: "", nombre :"VEGA  BARAJAS XIMENA JASMIN", grupo:"Grupo 13", laboratorio:"1",fecha:"12 de Enero de 2022", horario:"4:00 PM a 7:00 PM"},
+{ registro:"", tipoCurso:"2022A", codigo: "", nombre :"VELAZQUEZ  VASQUEZ EMILIANO", grupo:"Grupo 13", laboratorio:"1",fecha:"12 de Enero de 2022", horario:"4:00 PM a 7:00 PM"},
+{ registro:"5510526", tipoCurso:"2022A", codigo: "222279068", nombre :"VELOZ ANZALDO HECTOR ALEJANDRO", grupo:"Grupo 13", laboratorio:"1",fecha:"12 de Enero de 2022", horario:"4:00 PM a 7:00 PM"},
+{ registro:"", tipoCurso:"2022A", codigo: "222231693", nombre :"VENTURA GOMEZ JOSE ANTONIO", grupo:"Grupo 13", laboratorio:"1",fecha:"12 de Enero de 2022", horario:"4:00 PM a 7:00 PM"},
+{ registro:"5479651", tipoCurso:"2022A", codigo: "222279769", nombre :"VEREA FLORES MARIANA", grupo:"Grupo 13", laboratorio:"1",fecha:"12 de Enero de 2022", horario:"4:00 PM a 7:00 PM"},
+{ registro:"5466152", tipoCurso:"2022A", codigo: "222231626", nombre :"VILLA GARCIA DIEGO DANIEL", grupo:"Grupo 13", laboratorio:"1",fecha:"12 de Enero de 2022", horario:"4:00 PM a 7:00 PM"},
+{ registro:"", tipoCurso:"2022A", codigo: "", nombre :"VILLA SANTILLAN CLARA LIZBETH", grupo:"Grupo 13", laboratorio:"1",fecha:"12 de Enero de 2022", horario:"4:00 PM a 7:00 PM"},
+{ registro:"5505322", tipoCurso:"2022A", codigo: "222278894", nombre :"VILLASEÑOR ALVAREZ XIMENA LIZBETH", grupo:"Grupo 13", laboratorio:"1",fecha:"12 de Enero de 2022", horario:"4:00 PM a 7:00 PM"},
+{ registro:"5505116", tipoCurso:"2022A", codigo: "222278827", nombre :"VILLEGAS DE LA CRUZ GLADIS SARAY", grupo:"Grupo 13", laboratorio:"1",fecha:"12 de Enero de 2022", horario:"4:00 PM a 7:00 PM"},
+{ registro:"", tipoCurso:"2022A", codigo: "222231979", nombre :"VILLEGAS RAMIREZ ALLYSON ESPERANZA", grupo:"Grupo 13", laboratorio:"1",fecha:"12 de Enero de 2022", horario:"4:00 PM a 7:00 PM"},
+{ registro:"5512247", tipoCurso:"2022A", codigo: "222280112", nombre :"VIRAMONTES RENTERIA ZULEMA MARGARITA", grupo:"Grupo 13", laboratorio:"1",fecha:"12 de Enero de 2022", horario:"4:00 PM a 7:00 PM"},
+{ registro:"5503005", tipoCurso:"2022A", codigo: "222280376", nombre :"VITELA PEREZ ALONDRA", grupo:"Grupo 13", laboratorio:"1",fecha:"12 de Enero de 2022", horario:"4:00 PM a 7:00 PM"},
+{ registro:"5463941", tipoCurso:"2022A", codigo: "222230239", nombre :"ZAVALA OCAMPO MELANE VIANEY", grupo:"Grupo 13", laboratorio:"1",fecha:"12 de Enero de 2022", horario:"4:00 PM a 7:00 PM"}
+
+//inicio 2022A
+///
+//listado base
+
+
+
+];
+
+/*
+const _db_busqueda = (start) => {
+    let busqueda = start;
+    return{
+        getDatos:() => {
+            return busqueda;
+        }
+    }
+}
+
+
+/*
+
+const _distrito = (start) =>{
+    let distrito = start;
+    return{
+        mostrar:( registro, tipoCurso) =>{
+            //const index = distrito.findIndex((item) => item.id == id);
+
+        },
+        getAllSeccion:() =>{
+            return distrito;
+        },
+        mostrarRegistro:( registro ) =>{
+            const index = distrito.findIndex((item) => item.id == id);
+            return distrito[index];
+
+        }
+    }
+}
+/*
+ const _busqueda = (start) =>{
+    let busqueda = start;
+    return{
+        mostrar:( registro ) =>{
+            //const index = distrito.findIndex((item) => item.id == id);
+
+        },
+        getAllBusqueda:() =>{
+            return busqueda;
+        },
+        mostrarRegistro:( registro ) =>{
+            const index = busqueda.findIndex((item) => item.id == id);
+            return busqueda[index];
+
+        },
+        newBusqueda:(registro, tipoCurso ,  mensaje, fecha , horario, aula ) =>{
+            const lastbus = busqueda[busqueda.length -1];
+            busqueda.push({
+                registro : registro,
+                tipoCurso: tipoCurso,  
+                mensaje: mensaje, 
+                grupo : grupo,
+                fecha :fecha, 
+                horario: horario,
+                aula: aula,
+            });
+
+        }
+    }
+}
+*/
+
+
+
+
+</script>
+
+</script>
+<style type="text/css">
+    .lista_select{
+        border: 3px solid #58ACFA;
+        background-color:#2ECCFA;
+        color:white;
+        font-size:17px;
+        width:350px;
+        height:40px;    
+    }
+    .caja{
+        border: 3px solid #58ACFA;
+        width:350px;
+        height:35px;
+    }
+    .titulo{
+        padding-top: 10px;
+        color :#8c2b3d;
+    }
+     /*   
+    .boton_personalizado{
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 20px;
+        color: #ffffff;
+        background-color: #1883ba;
+        border-radius: 6px;
+        border: 2px solid #0016b0;
+        width:350px;
+        height:45px;
+    }*/
+
+    .btn{
+        width:100%;
+        background: linear-gradient(160deg, #2B5D98, #1D8AA7  );
+    }
+
+    .btn:active{
+        
+        background: linear-gradient(160deg, #1D8AA7 );
+    }
+/*
+    .boton_personalizado:hover{
+        color: #1883ba;
+        background-color: #ffffff;
+    }*/
+    /*
+    .boton_personalizado:active{
+        /*Gracias a que el elemento está en posición relativa, podemos bajarlo 4 px sin alterar el HTMLtop:4px;
+        /*bajamos el tamaño de la sombra para conseguir el efecto de profundidad*/
+      /*  -moz-box-shadow: 0px 1px 0px 0px rgb(0, 105, 202);
+        -webkit-box-shadow: 0px 1px 0px 0px rgb(0, 105, 202);
+        box-shadow: 0px 1px 0px 0px rgb(0, 105, 202);
+        color: #000000;
+        background-color: #ffffff;
+        background-color: #1883ba;
+    }
+  */
+</style>
+<body>
+    
+
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <center> <h1 class="titulo">PREPARATORIA 22 TLAQUEPAQUE</h1> </center> 
+            </div>
+        </div> <BR></BR>
+        <div class="row">
+            <div class="col">
+                <center> <h1>DICTAMEN DE ADMISIÓN  </h1>
+                <h2> <u> CALENDARIO 2022-A </u></h2> 
+                </center> 
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <center> 
+                <img src="./logo_prepa-recuperado.png" alt=""> 
+                </center> 
+            </div>
+        </div>
+
+        <br><br>
+        <div class="row">
+            <div class="col">
+                <label for="radio" style="font-size:30px"> Introduce tu número de Registro</label>
+                
+            </div>
+            </div>
+            <div class="row">
+            <div class="col">
+                <input type="text" class="form-control" id="seccion"  name="Seccion" placeholder="Ejemplo 5123456"   onkeyup = "if(event.keyCode == 13){ miFunc() }"> </input>
+            </div>
+        </div>
+        &nbsp;
+        
+        
+        &nbsp;
+        <div class="row">
+            <div class="col">         
+            <p>
+                <a href="#collapsecasillas" class="btn btn-primary btn-lg btn-block " data-toggle="collapse" role="button"
+                aria-expanded="false" aria-controls="collapseExample" onclick="miFunc()" >
+                <b>Buscar</b>
+                </a>
+            </p>
+            </div>
+        </div>
+
+        <div class="row"></div>
+            <p id="mensaje_error"></p> 
+            <p id="mensaje_estatus"></p> 
+            <div class="collapse" id="collapsecasillas">
+
+                </p>
+                <table class="table table-striped" id="casillasTable">
+                    <thead class="table-dark">
+                        <tr>
+                            <!-- Tabla inicio
+                            { registro: "" , tipoCurso:"",codigo:"",nombre:"",grupo:"", laboratorio:"",fecha:"",horario:"."},                          
+                            Aquí puedes escribir tu comentario -->
+                            <th scope="col"># Registro</th>
+                            <th scope="col">Ciclo</th>
+                            <th scope="col">Codigo</th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Grupo</th>
+                            <th scope="col">Laboratorio</th>
+                            <th scope="col">Fecha</th>
+                            <th scope="col">Horario</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+            </div>
+        </div>
+            
+    </div>
+ 
+
+
+</body> 
+   <script>
+      function miFunc() {
+        
+        //alert('Se ha dado clic al botón!');
+        //console.log("aqui");
+        let inputValue = document.getElementById("seccion").value; 
+//        let tipoCasilla = document.getElementById("tipoCasilla").value; 
+        //console.log(inputValue);
+        //if(inputValue >= 1 && inputValue <= 3315){
+
+//            console.log("aqui entre");
+   
+
+            var encontrado = new Boolean(false);
+            
+            
+            
+            let table = document.getElementById('casillasTable');
+            let lista = table.getElementsByTagName("tbody")[0];
+    
+            lista.innerHTML = "";
+            document.getElementById("mensaje_error").innerHTML = ""; 
+            document.getElementById("mensaje_estatus").innerHTML = ""; 
+            
+            //let row = document.createElement("tr");
+            
+            
+            
+
+            //IMPRESION DE TABLA
+
+            Object.keys(db_distrito).forEach(key => {
+                if ( db_distrito[key].nombre == inputValue || db_distrito[key].registro == inputValue  ){
+                    encontrado = true;
+                    let row = document.createElement("tr");
+                    //console.log("que seleccion");
+                    
+                    //{ registro: "" , tipoCurso:"",codigo:"",nombre:"",grupo:"", laboratorio:"",fecha:"",horario:"."},                          
+                    /*<th scope="col"># Registro</th>
+                            <th scope="col">Ciclo</th>
+                            <th scope="col">Codigo</th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Grupo</th>
+                            <th scope="col">Laboratorio</th>
+                            <th scope="col">Fecha</th>
+                            <th scope="col">Horario</th>
+                      */      
+                    switch ( db_distrito[key].tipoCurso  ) {
+                        case "2022A":
+                        document.getElementById("mensaje_estatus").innerHTML = "Bienvenido, lee claramente los datos que se muestran en la siguiente tabla. Indican el día, la hora y el lugar en los que deberás presentarte en la Preparatoria 22 para tomar tu curso de inducción.<br> <br> <font color ='#FF0000'> ** Es importante que asistas ya que se verán temas necesarios para el inicio de semestre ** </font>" ;
+                        
+                        row.innerHTML=`
+                            <td > ${ key,db_distrito[key].registro }</td>
+                            <td > ${key, db_distrito[key].tipoCurso} 
+                                <p> ADMITIDO CICLO ESCOLAR 2022A (INICIA CLASES EN ENERO 2022) </p>
+                                </td>
+                            <td > ${key, db_distrito[key].codigo }</td>
+                            <td > ${key, db_distrito[key].nombre }</td>
+                            <td > ${key, db_distrito[key].grupo }</td>
+                            <td > ${key, db_distrito[key].laboratorio } </td>
+                            <td > ${key, db_distrito[key].fecha }</td>
+                            <td > ${key, db_distrito[key].horario }</td>
+                            `;
+
+                            lista.appendChild(row);   
+                        break;
+
+                        case "2022B":
+                        document.getElementById("mensaje_estatus").innerHTML = " <font color ='#295e95'> <b> JUNTA DE SENSIBILIZACION DE SEMESTRE BASE PARA PADRES DE FAMILIA </b></font>, PARA ESTA ACTIVIDAD SOLO DEBEN ACUDIR LOS PADRES DE FAMILIA O TUTORES <br><br>*La siguiente tabla, indica el día, la hora y el lugar en los que deberán acudir a la Preparatoria 22" ;
+
+                        //<p> ADMITIDO CICLO ESCOLAR 2022A (INICIA CLASES EN ENERO 2022)</p>
+                        row.innerHTML=`
+                            <td > ${ key,db_distrito[key].registro }</td>
+                            <td > ${key, db_distrito[key].tipoCurso} 
+                                <p> ADMITIDO CICLO ESCOLAR 2022A (INICIA CLASES EN ENERO 2022) </p>
+                                </td>
+                            <td > ${key, db_distrito[key].codigo }</td>
+                            <td > ${key, db_distrito[key].nombre }</td>
+                            <td > ${key, db_distrito[key].grupo }</td>
+                            <td > ${key, db_distrito[key].laboratorio } </td>
+                            <td > ${key, db_distrito[key].fecha }</td>
+                            <td > ${key, db_distrito[key].horario }</td>
+                            `;
+
+
+
+                            lista.appendChild(row);   
+                        break;
+
+                        default:
+                            //
+                            //document.getElementById("mensaje_error").innerHTML = "11111Si tu interes es volver a participara para formar parte de la univercidad de guaadalajara consulta el sitio control escolar udg";
+                        break;
+                    }
+                    document.getElementById("mensaje_error").innerHTML = "ingresaste el siguiente numero de registro : <b>" + inputValue + "</b> Verifica que sea el tuyo" ;
+                }                   
+                    else{
+                    console.log("no math");
+
+                    
+                   // document.getElementById("mensaje_error").innerHTML = "<p>222Si tu interes es volver a participara para formar parte de la univercidad de guaadalajara consulta el sitio control escolar udg";
+                    
+               }
+                                                      
+            });
+
+                addEventListener('load',table);
+
+        //}
+        /*
+        else{
+            
+            if (encontrado == false){
+                        console.log("asdfasdf111");
+                    }
+            //mensaje de no se encontro seccion
+            //alert("no se encuentra LA SECCION ");
+            document.getElementById("mensaje_error").innerHTML = "NO SE ENCONTRO El registro Si tu interes es volver a participar para formar parte de la universidad de guadalajara consulta el sitio control escolar udg"; 
+
+        }*/
+        //        
+        if (encontrado == false){
+                        console.log("no encontrado");
+                        document.getElementById("mensaje_error").innerHTML = "Si tu interés es formar parte de la Universidad de Guadalajara Consulta los pasos a seguir en: <a href='http://escolar.udg.mx/aspirantes/calendarios' > http://escolar.udg.mx/aspirantes/calendarios </a> "; 
+                    }
+
+      }
+
+    </script>
+
+</html>
+
+
+  
+   
